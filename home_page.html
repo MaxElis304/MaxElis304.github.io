@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Компьютерные Комплектуюшие от MaxElis</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Компьютерные комплектующие. Цены, фотографии и характеристики">
+    <meta name="keywords" content="Компюьтер, комплектующие, RTX, 3080, 3060, NVIDIA, AMD, MaxElis, компьютерные, характеристики, описание, цены, 2080, TI">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Reg.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="/res/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/res/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/res/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/res/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/res/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/res/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/res/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/res/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/res/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/res/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/res/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/res/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/res/icons/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/res/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+<body class="vidbody">
+    <div class="regvid">
+        <video class="video_media"  id="meme" src="meme.mp4" type="video/mp4" preload="auto" autoplay loop ></video>
+    </div>
+</body>
+<body>
+
+
+
+<form class="form" action="form.php" method="get">
+    <h1 class = "form_title"> Регистрация</h1>
+
+    <div class="form_group">
+        <input class="form_input" placeholder=" " type="text" name="name">
+        <label class="form_label">ФИО</label>
+    </div>
+
+    <div class="form_group">
+        <input class="form_input" placeholder=" " type="email" name="email">
+        <label class="form_label">Почта</label>
+    </div>
+
+    <div class="form_group">
+        <input class="form_input" placeholder=" " type="password" name="passwd">
+        <label class="form_label">Пароль</label>
+    </div>
+
+    <div class="form_group">
+        <input class="form_input" placeholder=" " type="tel" name="phone">
+        <label class="form_label">Телефон</label>
+    </div>
+
+    <div class="form_group">
+        <input class="form_input" placeholder=" " type="date" name="birth">
+        <label class="form_label">Дата Рождения</label>
+    </div>
+
+    <div class="form_group">
+        <label class="form_label">Пол</label><br><br>
+        <label>
+            <input type="radio" value="male" name="sex" checked> Мужской
+
+        </label>
+        <label>
+            <input type="radio" value="female" name="sex" > Женский
+            <label class="form_label">Пол</label>
+        </label>
+    </div>
+
+    <div class="form_group">
+        <label class="form_label">Институт</label>
+    </div><br><br>
+
+    <div class="select">
+        <select name="Institute">
+            <option class="form_label" value="IIT" >ИИТ</option>
+            <option class="form_label" value="III">ИИИ</option>
+        </select>
+    </div>
+
+    <input action="action" class="form_button" type="submit" value="Регистрация" onclick="window.history.go(-1); return false;"/>
+</form>
+<button id="mute-video" class="controller">
+    <img src="https://webstatic.hoyoverse.com/dora/biz/mihoyo-hk4e-concept-animation/3.0.2/images/audio-off.89ea1960.png" class="controller__audio--off">
+    <img src="https://webstatic.hoyoverse.com/dora/biz/mihoyo-hk4e-concept-animation/3.0.2/images/audio-on.5e57c737.png" class="controller__audio--on">
+</button>
+
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', ()=>{
+        var a = document.getElementsByTagName('video')[0]
+        var b = document.getElementById('videoID');
+        a.play()
+        a.volume = 0.07
+    });
+    $("video").prop('muted', true);
+
+
+</script>
+
+</body>
+</html>

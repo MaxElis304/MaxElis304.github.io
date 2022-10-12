@@ -1,0 +1,197 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: radial-gradient(#BFD6E2 1px, rgba(255,255,255,0) 2px);
+  background-size: 10px 10px;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav a {
+  display: block;
+  text-decoration: none;
+  outline: none;
+  transition: .4s ease-in-out;
+}
+.topmenu {
+  backface-visibility: hidden;
+  background: rgba(255,255,255,.8);
+}
+.topmenu > li {
+  display: inline-block;
+  position: relative;
+}
+.topmenu > li > a {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 15px;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 30px;
+  font-weight: bold;
+  color: #003559;
+  text-transform: uppercase;
+}
+.down:after {
+  content: "\f107";
+  margin-left: 8px;
+    font-family: FontAwesome, serif;
+}
+.topmenu li a:hover, .topmenu li a:focus { color: #E6855F; }
+.submenu {
+  background: white;
+  border: 2px solid #003559;
+  position: absolute;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 5;
+  width: 150px;
+  transform: perspective(600px) rotateX(-90deg);
+  transform-origin: 0% 0%;
+  transition: .6s ease-in-out;
+}
+.topmenu > li:hover .submenu, topmenu > li:focus .submenu{
+  visibility: visible;
+  opacity: 1;
+  transform: perspective(600px) rotateX(0deg);
+}
+.submenu li a {
+  color: #7f7f7f;
+  font-size: 13px;
+  line-height: 36px;
+  padding: 0 25px;
+  font-family: 'Kurale', serif;
+}
+
+header{
+	width: 100%;
+	background-image: url(https://www.finistmedanaliz.ru/images/slides/2.jpg);
+	background-repeat: no-repeat;
+	margin-bottom: 10px;
+	
+}
+.title{
+	font-size: 36px;
+	padding-top: 80px;
+	text-align: center;
+	position: relative;
+	bottom: 40px;
+	font-family: 'Exo 2', sans-serif;
+	color: #003559;
+	
+	
+}
+.logo{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+aside{
+	text-align: right;
+}
+
+footer{
+	text-align: center;
+	border: solid #003559;
+}
+
+.form_button{
+    padding: 10px 50px;
+    border: none;
+    border-radius: 5px;
+    color: #003559;
+    background-color: #ffbf50;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.form_button:focus,
+.form_button:hover {
+    background-color: rgba(255, 191, 240, 0.7);
+}
+#menu-checkbox{
+    display: none;
+}
+@media (max-width: 420px){
+    .header{
+        width: 100%;
+        background-image: url(https://www.finistmedanaliz.ru/images/slides/2.jpg);
+        background-repeat: no-repeat;
+        margin-bottom: 10px;
+        justify-content: center;
+    }
+    .title{
+        font-size: 30px;
+        text-align: right;
+        bottom: 10px;
+        right: 10px;
+
+    }
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    nav a {
+        display: block;
+        text-decoration: none;
+        outline: none;
+        transition: .4s ease-in-out;
+    }
+    .topmenu {
+        display: none;
+    }
+    .topmenu li {
+        width: 100%;
+        display: block;
+        font-size: 12px;
+        position: relative;
+    }
+    .topmenu a {
+        display: block;
+        padding: 8px
+    }
+    .toggle-button{
+        margin-left: 100px;
+        margin-right: 100px;
+        text-align: center;
+        display: block;
+        cursor: pointer;
+        color: #003559;
+        font-size: 28px;
+        background-color: #ffbf50;
+        border: none;
+        border-radius: 5px;
+    }
+    .toggle-button:after{
+        content: attr(data-open);
+        display: block;
+    }
+    #menu-checkbox:checked + nav[role="navigation"] .topmenu{
+        display: block;
+    }
+    #menu-checkbox:checked + nav[role="navigation"] .toggle-button:after{
+        content: attr(data-close);
+    }
+    .topmenu{
+        position: relative;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+}
