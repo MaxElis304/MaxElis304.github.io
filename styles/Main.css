@@ -7,9 +7,10 @@ head{
 body {
     background:  linear-gradient(to bottom, #6e529d 0%, #d97b93 100%) no-repeat ;
     -webkit-background-size: cover;
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
+
 }
 nav ul {
   list-style: none;
@@ -253,6 +254,8 @@ footer{
     border-radius: 20px;
     background-color: lightcyan;
 }
+
+*{border: 1px solid red; box-sizing: border-box;}
 
 @keyframes notif {
     50%{transform: scale(1.1, 1.1)}
