@@ -6,13 +6,11 @@ head{
 
 body {
     background:  linear-gradient(to bottom, #6e529d 0%, #d97b93 100%) no-repeat ;
-    height: 100%;
-    position: absolute;
+    -webkit-background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
-#body{
-    position: relative;
-}
-
 nav ul {
   list-style: none;
   margin: 0;
@@ -118,6 +116,7 @@ aside{
 footer{
 	text-align: center;
 	border: 2px solid #003559;
+    margin-top: auto;
 }
 #head{
     position: relative;
@@ -259,7 +258,31 @@ footer{
     50%{transform: scale(1.1, 1.1)}
     100%{transform: scale(0.9, 0.9)}
 }
-@media (max-width: 553px){
+@media (max-width: 1047px){
+    .title{
+        text-align: right;
+    }
+    .title h1{
+
+        font-size: 2em;
+        top: 20px;
+        display: inline-block;
+    }
+    .title h1::before{
+        content: "";
+        position: absolute;
+        top: 50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        height: 100%;
+        border-radius: 50%/20%;
+        border: 1px solid #ffbf50;
+        border-left-color: transparent;
+        border-right-color: transparent;
+    }
+}
+@media (max-width: 628px){
     header {
         margin-bottom: 10px;
         justify-content: center;
