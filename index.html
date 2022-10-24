@@ -1,8 +1,8 @@
-<!DOCTYPE html>
 
-<script src="/scripts/script.js"></script>
+<!DOCTYPE html>
 <html lang="ru">
-<head>
+<head id="head">
+
 	<title>Компьютерные Комплектуюшие от MaxElis</title>
 	<meta charset="UTF-8">
 	<meta name="description" content="Компьютерные комплектующие. Цены, фотографии и характеристики">
@@ -26,11 +26,12 @@
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" content="/res/icons/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	
 	<header>
-	<div class = "logo"><img src = "https://www.clipartmax.com/png/full/64-648982_icon-of-a-desktop-computer-computer-lab-icon-png.png" width= "100" height= "100" alt = "Лого"></div>
-	<div class = "title">Компьютерные Комплектующие</div>
-
+	<div class = "logo"><img src = "https://www.clipartmax.com/png/full/64-648982_icon-of-a-desktop-computer-computer-lab-icon-png.png" width= "100" height= "100" alt = "Лого">
+	</div>
+		<div class = "title"><h1>Компьютерные Комплектующие</h1></div>
 	<input type="checkbox" id="menu-checkbox">
 	<nav role="navigation">
 		<label for ="menu-checkbox" class="toggle-button"
@@ -39,18 +40,14 @@
 		<ul class="topmenu">
 			<li><a href="#" class="down">Видеокарты</a>
 				<ul class="submenu">
-					<li><a href="res/img/NVIDIA/nvidia.html">Nvidia</a>
-					</li>
-					<li><a href="">AMD</a>
-					</li>
+					<li><a href="res/img/NVIDIA/nvidia.html">Nvidia</a></li>
+					<li><a href="">AMD</a></li>
 				</ul>
 			</li>
 			<li><a href="#" class="down">Процессоры</a>
 				<ul class="submenu">
-					<li><a href="">Intel</a>
-					</li>
-					<li><a href="">AMD</a>
-					</li>
+					<li><a href="">Intel</a></li>
+					<li><a href="">AMD</a></li>
 				</ul>
 			</li>
 			<li><a href="">Материнские платы</a></li>
@@ -64,9 +61,18 @@
 	</nav>
 	</header>
 </head>
-<body>
+
+<body id="body">
+	<div class="bg"></div>
+	<div class="bg"></div>
+	<div class="bg"></div>
+	<div class="bg"></div>
+	<div class="bg"></div>
+	<div class="bg"></div>
+	<div class="bg"></div>
+
 	<form action="home_page.html">
-		<button class="form_button" type="submit"> Регистрация
+		<button class="form_button" type="submit" id="form"> Регистрация
 		</button>
 	</form>
 	<main>
@@ -75,9 +81,7 @@
 		<h4>Даже не мечтайте</h4>
 		<h5>Но задонатить можете</h5>
 		<h6>Но не советую, за коррупцию посчитают</h6>
-		<hr>
-		<b>Здесь что-то будет, но это не точно</b><hr>
-		<article><hr><h4>Не знаю, зачем вам это, но комплектующие прямо из <mark>Америки!</mark></h4></article><hr>
+
 		<section>
 			<h3>Поставки из США!</h3>
 		</section>
@@ -87,7 +91,6 @@
 		<section>
 			<h3>Поставки из России!</h3>
 		</section>
-		<aside><h5>Качество поставки гарантируется поставщиком и производителем. Гарантия 2 года.</h5></aside>
 		Скоро выйдет NVIDIA RTX 204<sub>0</sub>0, и да, это не ошибка. Так же ожидаем x<sup>2</sup> рост продаж<br>
 		<u><i>Конфигурация топового пк:</i></u>
 		<ol>
@@ -97,16 +100,59 @@
 		</ol>
 		<b>Дальше любое железо подойдет</b>
 	</main>
-		<img src = "https://kovalev-copyright.ru/wp-content/uploads/2020/07/maxresdefault.jpg" width= "100%" height= "100%" alt = "Фоточка пк" usemap="#shapes">
-		<map name="shapes">
-			<area shape="polygon" coords="1000, 100, 500, 200, 300, 700" href="https://catherineasquithgallery.com/uploads/posts/2021-02/1612669111_170-p-zelenii-treugolnik-na-prozrachnom-fone-235.png">
-			<area shape="rectangle" coords="400,400,1000,1000" href="https://img2.freepng.ru/20180329/eww/kisspng-rectangle-shape-clip-art-rectangle-5abcf9570cc527.7591891615223340390523.jpg">
-			<area shape="circle" coords="100,100,100" href="https://catherineasquithgallery.com/uploads/posts/2021-03/1614760955_9-p-belii-krug-na-chernom-fone-11.png">
-		</map>
-		<footer>
-			<address> <a href="mailto:maxelis304@gmail.com">Елисеев Максим</a></address>
-			<p>&copy; Все права защищены Елисеев Максим, 2022</p>
-		</footer>
+
+	<div class="notification">
+		<button onclick="myFunc()" class="notif"></button>
+		<div id="myNotif" class="notif-content">
+			<a href="#">Hi</a>
+			<a href="#">Useless</a>
+			<a href="#">Notification</a>
+		</div>
+	</div>
+	<a href="#" class="scrollup">Наверх</a>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$(window).scroll(function(){
+				if ($(this).scrollTop() > 100) {
+					$('.scrollup').fadeIn();
+				} else {
+					$('.scrollup').fadeOut();
+				}
+			});
+
+			$('.scrollup').click(function(){
+				$("html, body").animate({ scrollTop: 0 }, 600);
+				return false;
+			});
+
+		});
+		function myFunc() {
+			document.getElementById("myNotif").classList.toggle("show");
+		}
+		window.onclick = function(event) {
+			if (!event.target.matches('.notif')) {
+
+				var dropdowns = document.getElementsByClassName("notif-content");
+				var i;
+				for (i = 0; i < dropdowns.length; i++) {
+					var openDropdown = dropdowns[i];
+					if (openDropdown.classList.contains('show')) {
+						openDropdown.classList.remove('show');
+					}
+				}
+			}
+		}
+
+	</script>
+
 
 </body>
+<footer>
+	<address> <a href="mailto:maxelis304@gmail.com">Елисеев Максим</a></address>
+	<p>&copy; Все права защищены Елисеев Максим, 2022</p>
+</footer>
+
+
 </html>

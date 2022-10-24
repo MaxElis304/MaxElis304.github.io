@@ -1,9 +1,18 @@
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  background: radial-gradient(#BFD6E2 1px, rgba(255,255,255,0) 2px);
-  background-size: 10px 10px;
+
+head{
+    display: flex;
+    height: 100%;
 }
+
+body {
+    background:  linear-gradient(to bottom, #6e529d 0%, #d97b93 100%) no-repeat ;
+    height: 100%;
+    position: absolute;
+}
+#body{
+    position: relative;
+}
+
 nav ul {
   list-style: none;
   margin: 0;
@@ -17,7 +26,7 @@ nav a {
 }
 .topmenu {
   backface-visibility: hidden;
-  background: rgba(255,255,255,.7);
+  background: rgba(255,255,255,.3);
 }
 .topmenu > li {
   display: inline-block;
@@ -39,17 +48,17 @@ nav a {
 }
 .topmenu li a:hover, .topmenu li a:focus { color: #E6855F; }
 .submenu {
-  background: white;
-  border: 2px solid #003559;
-  position: absolute;
-  left: 0;
-  visibility: hidden;
-  opacity: 0;
-  z-index: 5;
-  width: 150px;
-  transform: perspective(600px) rotateX(-90deg);
-  transform-origin: 0% 0%;
-  transition: .6s ease-in-out;
+    background: lightcyan;
+    border: 2px solid #003559;
+    position: absolute;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 5;
+    width: 150px;
+    transform: perspective(600px) rotateX(-90deg);
+    transform-origin: 0% 0%;
+    transition: .6s ease-in-out;
 }
 .topmenu > li:hover .submenu, .topmenu > li:focus .submenu{
   visibility: visible;
@@ -67,23 +76,35 @@ nav a {
 header{
 	width: 100%;
     max-height: 100vh;
-	background-image: url(https://www.finistmedanaliz.ru/images/slides/2.jpg);
-	background-repeat: no-repeat;
-	margin-bottom: 10px;
-    background-position: center center;
-    background-size: cover;
 	
 }
 .title{
-	font-size: 36px;
-	padding-top: 80px;
+	padding: 50px 20px;
 	text-align: center;
-	position: relative;
-	bottom: 40px;
-	font-family: 'Exo 2', sans-serif;
-	color: #003559;
-	
-	
+}
+.title h1{
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+    color: #ffbf50;
+    font-size: 3em;
+    font-weight: normal;
+    line-height: 1;
+    padding: 10px 0;
+    margin: 0;
+    display: inline-block;
+}
+.title h1::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 200%;
+    border-radius: 50%/20%;
+    border: 6px solid #ffbf50;
+    border-left-color: transparent;
+    border-right-color: transparent;
 }
 .logo{
 	position: absolute;
@@ -96,43 +117,175 @@ aside{
 
 footer{
 	text-align: center;
-	border: solid #003559;
+	border: 2px solid #003559;
 }
-
+#head{
+    position: relative;
+}
+#form{
+    position: absolute;
+}
 .form_button{
-    padding: 10px 50px;
-    border: none;
-    border-radius: 5px;
     color: #003559;
-    background-color: #ffbf50;
+    padding: 10px 50px;
+    border-radius: 10px;
+    background: #ffbf50;
     outline: none;
     cursor: pointer;
-    transition: 0.3s;
-    position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 15px;
+    right: 15px;
+    transition: all 0.3s;
+    position: relative;
+    margin:auto;
+    border: 2px solid #ffbf50;
 }
-
-.form_button:focus,
 .form_button:hover {
     background-color: rgba(255, 191, 240, 0.7);
+    filter: contrast(1.1)
+}
+.form_button:active{
+    filter: contrast(0.9)
+}
+
+.form_button:hover::before, .form_button:hover::after{
+    content: "";
+    border: 2px solid #0071f0;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    left: -5px;
+    bottom: -5px;
+    transition: all .5s;
+    animation: clippath 3s infinite linear;
+    border-radius: 10px;
+}
+.form_button:hover::after{
+    animation: clippath 3s infinite -1.5s linear;
+}
+@keyframes clippath{
+    0%,
+    100%{
+        clip-path: inset(0 0 98% 0);
+    }
+    25%{
+        clip-path: inset(0 98% 0 0);
+    }
+    50%{
+        clip-path: inset(98% 0 0 0);
+    }
+    75%{
+        clip-path: inset(0 0 0 98%);
+    }
 }
 #menu-checkbox{
     display: none;
 }
+
+.scrollup{
+    width:40px;
+    height:40px;
+    opacity:0.3;
+    position:fixed;
+    bottom:50px;
+    right:100px;
+    display:none;
+    text-indent:-9999px;
+    background: url('http://webmastermix.ru/files/demo/creation-site/raznoe/knopka-vverh/icon_top.png') no-repeat;
+    transition: 0.1s;
+}
+.scrollup:hover{
+    opacity: 0.7;
+    transition: 0.3s;
+}
+.notification{
+    position: relative;
+    display: flex;
+}
+.notif{
+    width: 40px;
+    height:40px;
+    opacity:0.7;
+    position:fixed;
+    bottom:100px;
+    right:100px;
+    text-indent:-9999px;
+    background: url(/res/icons/notif.png) no-repeat center;
+    transition: 0.3s;
+    border: none;
+
+}
+.notif:hover{
+    opacity: 1;
+    transition: 0.3s;
+    animation: notif;
+    animation-duration: 1s;
+    animation-iteration-count: 10;
+}
+.notif-content{
+    display: none;
+    background-color: white;
+    min-width: 250px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    z-index: 1;
+    bottom: 140px;
+    right: 140px;
+    border-radius: 20px;
+}
+.notif-content a{
+    color: #ffbf50;
+    padding: 12px 16px;
+    display: block;
+    border-bottom: 1px solid #0071f0;
+    text-align: center;
+    overflow: visible;
+    background-color: white;
+    font-family: 'Kurale', serif;
+    text-decoration: none;
+
+}
+.notif-content a:first-child{border-top-left-radius: 20px; border-top-right-radius: 20px}
+.notif-content a:last-child{border-bottom: none; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px}
+
+.show{display: block;}
+.notif-content a:hover{
+    transform: scale(1.1, 1.1) translateX(-10px);
+    transition: 0.3s;
+    border-radius: 20px;
+    background-color: lightcyan;
+}
+
+@keyframes notif {
+    50%{transform: scale(1.1, 1.1)}
+    100%{transform: scale(0.9, 0.9)}
+}
 @media (max-width: 553px){
     header {
-        background-image: url(https://javasea.ru/uploads/posts/2020-02/1581086042_belye-linii-na-golubom-fone.jpg);
-        background-repeat: no-repeat;
         margin-bottom: 10px;
         justify-content: center;
         background-position: center center;
     }
     .title{
-        font-size: 35px;
         text-align: right;
-        bottom: 10px;
-        right: 10px;
+    }
+    .title h1{
+
+        font-size: 1em;
+        top: 20px;
+        display: inline-block;
+    }
+    .title h1::before{
+        content: "";
+        position: absolute;
+        top: 50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        height: 100%;
+        border-radius: 50%/20%;
+        border: 1px solid #ffbf50;
+        border-left-color: transparent;
+        border-right-color: transparent;
     }
     nav ul {
         list-style: none;
@@ -162,8 +315,10 @@ footer{
         padding: 8px
     }
     .toggle-button{
-        margin-left: 100px;
-        margin-right: 100px;
+        margin-left: 10%;
+        margin-right: 10%;
+        min-width: 100px;
+
         text-align: center;
         display: block;
         cursor: pointer;
@@ -205,12 +360,16 @@ footer{
         transform-origin: 0% 0%;
         transition: .6s ease-in-out;
     }
-
-
-
-
-
-
+    .scrollup{
+        right: 25px;
+    }
+    .notif{
+        right: 25px;
+    }
+    .notif-content{
+        right: 65px;
+        min-width: 10px;
+    }
 
 
 
