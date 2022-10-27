@@ -1,16 +1,20 @@
+*{
+    box-sizing: border-box;
+}
 
+html, body{
+    padding: 0;
+    margin: 0;
+}
 head{
     display: flex;
-    height: 100%;
 }
 
 body {
     background:  linear-gradient(to bottom, #6e529d 0%, #d97b93 100%) no-repeat ;
-    -webkit-background-size: cover;
-    height: 100vh;
     display: flex;
     flex-direction: column;
-
+    height: 10%;
 }
 nav ul {
   list-style: none;
@@ -123,6 +127,7 @@ footer{
 .wrapper{
     display: flex;
     flex-direction: column;
+    margin-top: auto;
 }
 #head{
     position: relative;
