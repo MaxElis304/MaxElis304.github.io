@@ -23,19 +23,7 @@ h2 {
 /* hover styles */
 .location-listing {
     position: relative;
-    object-fit: cover;
 
-}
-
-.location-image {
-    line-height: 0;
-    overflow: hidden;
-}
-
-.location-image img {
-    filter: blur(0px);
-    transition: filter 0.3s ease-in;
-    transform: scale(1.1);
 }
 
 .location-title {
