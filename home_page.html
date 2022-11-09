@@ -26,14 +26,8 @@
     <meta name="msapplication-TileImage" content="/res/icons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 </head>
-<body class="vidbody">
-    <div class="regvid">
-        <video class="video_media"  id="meme" src="meme.mp4" type="video/mp4" preload="auto" autoplay loop ></video>
-    </div>
-</body>
+<body class="bg"></body>
 <body>
-
-
 
 <form class="form" action="form.php" method="get">
     <h1 class = "form_title"> Регистрация</h1>
@@ -85,25 +79,94 @@
             <option class="form_label" value="III">ИИИ</option>
         </select>
     </div>
-
-    <input action="action" class="form_button" type="submit" value="Регистрация" onclick="window.history.go(-1); return false;"/>
+    <div class="buttons">
+        <input action="action" class="form_button" type="submit" value="Регистрация" id ="login"/>
+        <input action="action" class="form_button" type="button" value="Назад" onclick="window.history.go(-1); return false;"/>
+    </div>
 </form>
-<button id="mute-video" class="controller">
-    <img src="https://webstatic.hoyoverse.com/dora/biz/mihoyo-hk4e-concept-animation/3.0.2/images/audio-off.89ea1960.png" class="controller__audio--off">
-    <img src="https://webstatic.hoyoverse.com/dora/biz/mihoyo-hk4e-concept-animation/3.0.2/images/audio-on.5e57c737.png" class="controller__audio--on">
-</button>
 
+</body>
+<main>
+    <div id="container">
+        <button class="button-4" id="admin">Админ</button>
+        <button class="form_button" id="like" style="background-color: white; color: black" >Like</button>
+        <button class="button-4" id="clone" style="margin-left: 5px;">Логин</button>
+        <ul id="heart-container"></ul>
+    </div>
+</main>
 <script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', ()=>{
-        var a = document.getElementsByTagName('video')[0]
-        var b = document.getElementById('videoID');
-        a.play()
-        a.volume = 0.07
+    "use strict"
+
+    login.onclick = function () {
+        while (!confirm("Желаете пройти регистрацию на сайте?")) {
+            alert("Попробуйте ещё раз");
+        }
+        alert("Круто!");
+        window.history.go(-1);
+        return false;
+    }
+    admin.onclick = function (){
+        let login = prompt ("Введите логин");
+        if (!login) {
+            alert ("Отменено");
+            return;
+        } else if (login !== "Админ") {
+            alert ("Вы кто такие? Я вас не знаю!");
+            return;
+        }
+        let password = prompt ("Введите пароль");
+        if (password === "Я главный") {
+            alert ("Здравствуйте!");
+        } else if (password) {
+            alert ("Неверный пароль");
+        } else {
+            alert ("Отменено");
+        }
+    }
+
+    like.onclick = function (){
+        if (like.style.color === "black") {
+            like.style.color = "white";
+            like.style["background-color"] = "red";
+        } else {
+            like.style.color = "black";
+            like.style["background-color"] = "white";
+        }
+    }
+
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    let isActive = false;
+    let oldTime = 0;
+
+    window.addEventListener('mousemove', (e) => {
+        let date = new Date();
+        let time = date.getMilliseconds() + date.getSeconds() * 1000;
+
+        if (isActive && (time - oldTime) > 50) {
+            oldTime = time;
+            let x = e.pageX;
+            let y = e.pageY;
+            let heart = document.createElement('img');
+            heart.src = "https://emojitool.com/img/vk/1.0/img__e29da4d19.png"
+            heart.alt = 'Сердце';
+            heart.classList.add("heart");
+            heart.style.top = y + "px";
+            heart.style.left = x + "px";
+            const container = document.querySelector('#heart-container');
+            container.appendChild(heart);
+
+        }
     });
-    $("video").prop('muted', true);
+
+    clone.onclick = function (){
+        isActive = !isActive;
+    }
 
 
 </script>
 
-</body>
+
 </html>
