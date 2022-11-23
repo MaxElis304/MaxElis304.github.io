@@ -27,10 +27,16 @@
         margin-bottom: 10px;
         justify-content: center;
         background-position: center center;
+        position: relative;
+    }
+    .video_bg{
+        position: absolute;
+        top: 22%;
     }
 
     .title {
         text-align: right;
+        margin-top: 90px;
     }
 
     .title h1 {
@@ -129,6 +135,7 @@
         border: 2px solid #003559;
         margin: auto;
         position: absolute;
+
         left: 0;
         right: 0;
         visibility: hidden;
@@ -151,6 +158,12 @@
     .notif-content {
         right: 65px;
         min-width: 10px;
+    }
+    .form_button{
+        font-size: 12px;
+    }
+    .extra{
+        font-size: 12px;
     }
 
 }
