@@ -22,6 +22,11 @@
         border-right-color: transparent;
     }
 }
+@media (max-width: 2618px){
+    .topmenu > li {
+        width: auto;
+    }
+}
 @media (max-width: 628px) {
     header {
         margin-bottom: 10px;
@@ -170,6 +175,8 @@
     .form_button{
         font-size: 12px;
         top: 200px;
+        margin-left: 50%;
+        margin-right: 5%;
     }
     .extra{
         font-size: 12px;
