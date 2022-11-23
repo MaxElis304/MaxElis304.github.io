@@ -139,43 +139,43 @@
 				</div>
 			</div>
 		</footer>
-		<script type="text/javascript">
-			$(document).ready(function(){
 
-				$(window).scroll(function(){
-					if ($(this).scrollTop() > 100) {
-						$('.scrollup').fadeIn();
-					} else {
-						$('.scrollup').fadeOut();
-					}
-				});
+	</body>
+	<script type="text/javascript">
+		$(document).ready(function(){
 
-				$('.scrollup').click(function(){
-					$("html, body").animate({ scrollTop: 0 }, 600);
-					return false;
-				});
-
+			$(window).scroll(function(){
+				if ($(this).scrollTop() > 100) {
+					$('.scrollup').fadeIn();
+				} else {
+					$('.scrollup').fadeOut();
+				}
 			});
-			function myFunc() {
-				document.getElementById("myNotif").classList.toggle("show");
-			}
-			window.onclick = function(event) {
-				if (!event.target.matches('.notif')) {
 
-					var dropdowns = document.getElementsByClassName("notif-content");
-					var i;
-					for (i = 0; i < dropdowns.length; i++) {
-						var openDropdown = dropdowns[i];
-						if (openDropdown.classList.contains('show')) {
-							openDropdown.classList.remove('show');
-						}
+			$('.scrollup').click(function(){
+				$("html, body").animate({ scrollTop: 0 }, 600);
+				return false;
+			});
+
+		});
+		function myFunc() {
+			document.getElementById("myNotif").classList.toggle("show");
+		}
+		window.onclick = function(event) {
+			if (!event.target.matches('.notif')) {
+
+				var dropdowns = document.getElementsByClassName("notif-content");
+				var i;
+				for (i = 0; i < dropdowns.length; i++) {
+					var openDropdown = dropdowns[i];
+					if (openDropdown.classList.contains('show')) {
+						openDropdown.classList.remove('show');
 					}
 				}
 			}
+		}
 
-		</script>
-	</body>
-
+	</script>
 
 
 </html>

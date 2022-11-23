@@ -52,6 +52,7 @@
     background: url(/res/icons/notif.png) no-repeat center;
     transition: 0.3s;
     border: none;
+    z-index: 1000;
 
 }
 .notif:hover{

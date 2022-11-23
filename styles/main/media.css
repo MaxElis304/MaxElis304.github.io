@@ -27,16 +27,16 @@
         margin-bottom: 10px;
         justify-content: center;
         background-position: center center;
-        position: relative;
     }
     .video_bg{
-        position: absolute;
-        top: 22%;
+        overflow: hidden;
     }
+
 
     .title {
         text-align: right;
         margin-top: 90px;
+        position: relative;
     }
 
     .title h1 {
