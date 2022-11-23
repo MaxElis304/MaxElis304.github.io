@@ -11,74 +11,23 @@ head{
 }
 
 body {
-    background:  linear-gradient(to bottom, #6e529d 0%, #d97b93 100%) no-repeat ;
+    background:  linear-gradient(to bottom, #030914 0%, #080e30 100%) no-repeat ;
     display: flex;
     flex-direction: column;
     min-height: calc(100vh - 0px);
 }
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.video_media{
+    width: 100%;
 }
-nav a {
-  display: block;
-  text-decoration: none;
-  outline: none;
-  transition: .4s ease-in-out;
+.video_bg{
+    opacity: 0.7;
 }
-.topmenu {
-  backface-visibility: hidden;
-  background: rgba(255,255,255,.3);
-}
-.topmenu > li {
-  display: inline-block;
-  position: relative;
-}
-.topmenu > li > a {
-  font-family: 'Exo 2', sans-serif;
-  font-size: 15px;
-  height: 50px;
-  line-height: 50px;
-  padding: 0 30px;
-  font-weight: bold;
-  color: #003559;
-  text-transform: uppercase;
-}
-.down:after {
-    margin-left: 8px;
-    font-family: FontAwesome, serif;
-}
-.topmenu li a:hover, .topmenu li a:focus { color: #E6855F; }
-.submenu {
-    background: lightcyan;
-    border: 2px solid #003559;
-    position: absolute;
-    left: 0;
-    visibility: hidden;
-    opacity: 0;
-    z-index: 5;
-    width: 150px;
-    transform: perspective(600px) rotateX(-90deg);
-    transform-origin: 0% 0%;
-    transition: .6s ease-in-out;
-}
-.topmenu > li:hover .submenu, .topmenu > li:focus .submenu{
-  visibility: visible;
-  opacity: 1;
-  transform: perspective(600px) rotateX(0deg);
-}
-.submenu li a {
-  color: #7f7f7f;
-  font-size: 13px;
-  line-height: 36px;
-  padding: 0 25px;
-  font-family: 'Kurale', serif;
-}
+
 
 header{
 	width: 100%;
     max-height: 100vh;
+    position: absolute;
 	
 }
 .title{
@@ -86,15 +35,19 @@ header{
 	text-align: center;
 }
 .title h1{
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Comfortaa', cursive;
     position: relative;
     color: #ffbf50;
     font-size: 3em;
-    font-weight: normal;
     line-height: 1;
     padding: 10px 0;
     margin: 0;
     display: inline-block;
+    text-shadow:
+            0 0 5px #000000,
+            0 0 7px #ffbf50,
+            0 0 3px #ffffff,
+            0 0 10px #ffbf50;
 }
 .title h1::before{
     content: "";
@@ -118,7 +71,6 @@ aside{
 	text-align: right;
 }
 
-
 .wrapper{
     display: flex;
     flex-direction: column;
@@ -131,8 +83,10 @@ aside{
     position: absolute;
 }
 .form_button{
-    color: #003559;
+    color: #5D849FFF;
     padding: 10px 50px;
+    font-family: 'Comfortaa', cursive;
+    font-size: 20px;
     border-radius: 10px;
     background: #ffbf50;
     outline: none;
@@ -143,6 +97,11 @@ aside{
     position: relative;
     margin:auto;
     border: 2px solid #ffbf50;
+    text-shadow:
+            0 0 5px #000000,
+            0 0 7px #ffbf50,
+            0 0 3px #ffffff,
+            0 0 10px #ffbf50;
 }
 .form_button:hover {
     background-color: rgba(255, 191, 240, 0.7);
@@ -164,363 +123,37 @@ aside{
     animation: clippath 3s infinite linear;
     border-radius: 10px;
 }
-.form_button:hover::after{
-    animation: clippath 3s infinite -1.5s linear;
-}
-@keyframes clippath{
-    0%,
-    100%{
-        clip-path: inset(0 0 98% 0);
-    }
-    25%{
-        clip-path: inset(0 98% 0 0);
-    }
-    50%{
-        clip-path: inset(98% 0 0 0);
-    }
-    75%{
-        clip-path: inset(0 0 0 98%);
-    }
-}
-#menu-checkbox{
-    display: none;
-}
-
-.scrollup{
-    width:40px;
-    height:40px;
-    opacity:0.3;
-    position:fixed;
-    bottom:50px;
-    right:100px;
-    display:none;
-    text-indent:-9999px;
-    background: url('http://webmastermix.ru/files/demo/creation-site/raznoe/knopka-vverh/icon_top.png') no-repeat;
-    transition: 0.1s;
-}
-.scrollup:hover{
-    opacity: 0.7;
-    transition: 0.3s;
-}
-.notification{
-    position: relative;
-    display: flex;
-}
-.notif{
-    width: 40px;
-    height:40px;
-    opacity:0.7;
-    position:fixed;
-    bottom:100px;
-    right:100px;
-    text-indent:-9999px;
-    background: url(/res/icons/notif.png) no-repeat center;
-    transition: 0.3s;
-    border: none;
-
-}
-.notif:hover{
-    opacity: 1;
-    transition: 0.3s;
-    animation: notif;
-    animation-duration: 1s;
-    animation-iteration-count: 10;
-}
-.notif-content{
-    display: none;
-    background-color: white;
-    min-width: 250px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    position: fixed;
-    z-index: 1;
-    bottom: 140px;
-    right: 140px;
-    border-radius: 20px;
-}
-
-.notif-content a{
-    color: #ffbf50;
-    padding: 12px 16px;
-    display: block;
-    border-bottom: 1px solid #0071f0;
-    text-align: center;
-    overflow: visible;
-    background-color: white;
-    font-family: 'Kurale', serif;
-    text-decoration: none;
-
-}
-.notif-content a:first-child{border-top-left-radius: 20px; border-top-right-radius: 20px}
-.notif-content a:last-child{border-bottom: none; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px}
-
-.show{display: block;}
-.notif-content a:hover{
-    transform: scale(1.1, 1.1) translateX(-10px);
-    transition: 0.3s;
-    border-radius: 20px;
-    background-color: lightcyan;
-}
-.notif-content:hover.notif-content a{
-    filter: blur(4px);
-    opacity: .5;
-}
-.notif-content.notif-content a:hover{
-    filter: blur(0px);
-    opacity: 1;
-}
-.footer-wrap {
-    background: url(http://hassandesigns.top/html/classified/images/footer-bg.jpg) no-repeat top;
-    padding-top: 30px;
-    background-size: cover;
-}
-
-.footer-wrap h3 {
-    color: #000000;
-    font-size: 18px;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 30px;
-}
-
-.footer-wrap p {
-    font-size: 14px;
-    line-height: 24px;
-    color: #000000;
-    margin-top: 15px;
-}
-
-.footer-wrap p a {
-    color: #000000;
-    text-decoration: underline;
-    font-style: italic;
-}
-
-.footer-wrap p a:hover {
-    text-decoration: none;
-    color: #ff7800;
-}
-
-.footer-links li a {
-    font-size: 14px;
-    line-height: 26px;
-    color: #000000;
-    text-decoration: none;
-}
 
 
-.footer-links li:before {
-    content: "\f105";
-    font-family: 'FontAwesome';
-    padding-right: 10px;
-    color: #000000;
-}
 
-.footer-category li a {
-    font-size: 14px;
-    line-height: 26px;
-    color: #000000;
-    text-decoration: none;
-}
-
-.footer-category li:before {
-    content: "\f105";
-    font-family: 'FontAwesome';
-    padding-right: 10px;
-    color: #000000;
-}
-
-.address {
-
-    color: #000000;
-    font-size: 14px;
-    position: relative;
-    padding-left: 30px;
-    line-height: 30px;
-}
-
-.address:before {
-    content: "\f277";
-    font-family: 'FontAwesome';
+#extra{
     position: absolute;
-    top: 0;
-    left: 0;
 }
-
-.info a {
-
-    color: #000000;
-    font-size: 14px;
-    line-height: 30px;
-    font-weight: normal;
+.extra{
+    color: #5D849FFF;
+    padding: 10px 50px;
+    font-family: 'Comfortaa', cursive;
+    font-size: 20px;
+    border-radius: 10px;
+    background: #ffbf50;
+    outline: none;
+    cursor: pointer;
+    top: 75px;
+    right: 15px;
+    transition: all 0.3s;
+    position: relative;
+    margin:auto;
+    border: 2px solid #ffbf50;
+    text-shadow:
+            0 0 5px #000000,
+            0 0 7px #ffbf50,
+            0 0 3px #ffffff,
+            0 0 10px #ffbf50;
 }
-
-.fa-phone:before {
-    content: "\f095";
-}
-
-.info a {
-
-    color: #000000;
-    font-size: 14px;
-    line-height: 30px;
-    font-weight: normal;
-}
-
-.fa-envelope:before {
-    content:"\f0e0"
-}
-
-.copyright {
-    border-top: 1px solid #5f5f5f;
-    font-size: 14px;
-    color: #000;
-    margin-top: 25px;
-    padding-top: 10px;
-    text-align: center;
-    padding-bottom: 10px;
-}
-
 @keyframes notif {
     50%{transform: scale(1.1, 1.1)}
     100%{transform: scale(0.9, 0.9)}
 }
-@media (max-width: 1047px){
-    .title{
-        text-align: right;
-    }
-    .title h1{
-
-        font-size: 2em;
-        top: 20px;
-        display: inline-block;
-    }
-    .title h1::before{
-        content: "";
-        position: absolute;
-        top: 50%;
-        left:50%;
-        transform: translate(-50%, -50%);
-        width: 90%;
-        height: 100%;
-        border-radius: 50%/20%;
-        border: 1px solid #ffbf50;
-        border-left-color: transparent;
-        border-right-color: transparent;
-    }
-}
-@media (max-width: 628px){
-    header {
-        margin-bottom: 10px;
-        justify-content: center;
-        background-position: center center;
-    }
-    .title{
-        text-align: right;
-    }
-    .title h1{
-
-        font-size: 1em;
-        top: 20px;
-        display: inline-block;
-    }
-    .title h1::before{
-        content: "";
-        position: absolute;
-        top: 50%;
-        left:50%;
-        transform: translate(-50%, -50%);
-        width: 90%;
-        height: 100%;
-        border-radius: 50%/20%;
-        border: 1px solid #ffbf50;
-        border-left-color: transparent;
-        border-right-color: transparent;
-    }
-    nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-    nav a {
-        display: block;
-        text-decoration: none;
-        outline: none;
-        transition: .4s ease-in-out;
-    }
-    .topmenu {
-        display: none;
-        backface-visibility: hidden;
-        background: rgba(255,255,255, .7);
-    }
-    .topmenu li {
-        width: 100%;
-        display: block;
-        font-size: 12px;
-        position: relative;
-        text-align: center;
-    }
-    .topmenu a {
-        display: block;
-        padding: 8px
-    }
-    .toggle-button{
-        margin-left: 10%;
-        margin-right: 10%;
-        min-width: 100px;
-
-        text-align: center;
-        display: block;
-        cursor: pointer;
-        color: #003559;
-        font-size: 28px;
-        background-color: #ffbf50;
-        border: none;
-        border-radius: 5px;
-        transition: 0.3s;
-    }
-    .toggle-button:focus,
-    .toggle-button:hover {
-        background-color: rgba(255, 191, 240, 0.7);
-    }
-    .toggle-button:after{
-        content: attr(data-open);
-        display: block;
-    }
-    #menu-checkbox:checked + nav[role="navigation"] .topmenu{
-        display: block;
-    }
-    #menu-checkbox:checked + nav[role="navigation"] .toggle-button:after{
-        content: attr(data-close);
-    }
-    .topmenu{
-        position: relative;
-    }
-    .submenu {
-        background: white;
-        border: 2px solid #003559;
-        margin: auto;
-        position: absolute;
-        left: 0; right: 0;
-        visibility: hidden;
-        opacity: 0;
-        z-index: 5;
-        width: 150px;
-        transform: perspective(600px) rotateX(-90deg);
-        transform-origin: 0% 0%;
-        transition: .6s ease-in-out;
-    }
-    .scrollup{
-        right: 25px;
-    }
-    .notif{
-        right: 25px;
-    }
-    .notif-content{
-        right: 65px;
-        min-width: 10px;
-    }
 
 
 
-
-}

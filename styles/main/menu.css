@@ -1,0 +1,70 @@
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+nav a {
+    display: block;
+    text-decoration: none;
+    outline: none;
+    transition: .4s ease-in-out;
+}
+.topmenu {
+    backface-visibility: hidden;
+    background: rgb(3, 9, 22);
+
+}
+.topmenu > li {
+    display: inline-block;
+    position: relative;
+    float: left;
+    text-align: center;
+    width: calc(100%/9);
+}
+.topmenu > li > a {
+    font-family: 'Comfortaa', cursive;
+    font-size: 15px;
+    text-align: center;
+    line-height: 50px;
+    padding: 0 30px;
+    font-weight: bold;
+    color: #5d849f;
+    text-transform: uppercase;
+
+    text-shadow:
+            0 0 5px #000000,
+            0 0 7px #003cff,
+            0 0 3px #ffffff,
+            0 0 1px #003cff;
+
+}
+.down:after {
+    margin-left: 8px;
+    font-family: 'Comfortaa', cursive;
+}
+.topmenu li a:hover, .topmenu li a:focus { color: #fdbd50; }
+.submenu {
+    background: rgba(93, 132, 159, 0.62);
+    border: 2px solid #fdbd50;
+    position: absolute;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 5;
+    transform: perspective(600px) rotateX(-90deg);
+    transform-origin: 0% 0%;
+    transition: .6s ease-in-out;
+}
+.topmenu > li:hover .submenu, .topmenu > li:focus .submenu{
+    visibility: visible;
+    opacity: 1;
+    transform: perspective(600px) rotateX(0deg);
+}
+.submenu li a {
+    color: #fdbd50;
+
+    font-size: 16px;
+    line-height: 36px;
+    padding: 0 25px;
+    font-family: 'Comfortaa', cursive;
+}

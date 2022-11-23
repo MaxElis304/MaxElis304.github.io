@@ -1,0 +1,156 @@
+@media (max-width: 1047px){
+    .title{
+        text-align: right;
+    }
+    .title h1{
+
+        font-size: 2em;
+        top: 20px;
+        display: inline-block;
+    }
+    .title h1::before{
+        content: "";
+        position: absolute;
+        top: 50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        height: 100%;
+        border-radius: 50%/20%;
+        border: 1px solid #ffbf50;
+        border-left-color: transparent;
+        border-right-color: transparent;
+    }
+}
+@media (max-width: 628px) {
+    header {
+        margin-bottom: 10px;
+        justify-content: center;
+        background-position: center center;
+    }
+
+    .title {
+        text-align: right;
+    }
+
+    .title h1 {
+
+        font-size: 1em;
+        top: 20px;
+        display: inline-block;
+    }
+
+    .title h1::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        height: 100%;
+        border-radius: 50%/20%;
+        border: 1px solid #ffbf50;
+        border-left-color: transparent;
+        border-right-color: transparent;
+    }
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav a {
+        display: block;
+        text-decoration: none;
+        outline: none;
+        transition: .4s ease-in-out;
+    }
+
+    .topmenu {
+        display: none;
+        backface-visibility: hidden;
+        background: rgba(255, 255, 255, .7);
+    }
+
+    .topmenu li {
+        width: 100%;
+        display: block;
+        font-size: 12px;
+        position: relative;
+        text-align: center;
+    }
+
+    .topmenu a {
+        display: block;
+        padding: 8px
+    }
+
+    .toggle-button {
+        margin-left: 10%;
+        margin-right: 10%;
+        min-width: 100px;
+
+        text-align: center;
+        display: block;
+        cursor: pointer;
+        color: #003559;
+        font-size: 28px;
+        background-color: #ffbf50;
+        border: none;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+
+    .toggle-button:focus,
+    .toggle-button:hover {
+        background-color: rgba(255, 191, 240, 0.7);
+    }
+
+    .toggle-button:after {
+        content: attr(data-open);
+        display: block;
+    }
+
+    #menu-checkbox:checked + nav[role="navigation"] .topmenu {
+        display: block;
+    }
+
+    #menu-checkbox:checked + nav[role="navigation"] .toggle-button:after {
+        content: attr(data-close);
+    }
+
+    .topmenu {
+        position: relative;
+    }
+
+    .submenu {
+        background: white;
+        border: 2px solid #003559;
+        margin: auto;
+        position: absolute;
+        left: 0;
+        right: 0;
+        visibility: hidden;
+        opacity: 0;
+        z-index: 5;
+        width: 150px;
+        transform: perspective(600px) rotateX(-90deg);
+        transform-origin: 0% 0%;
+        transition: .6s ease-in-out;
+    }
+
+    .scrollup {
+        right: 25px;
+    }
+
+    .notif {
+        right: 25px;
+    }
+
+    .notif-content {
+        right: 65px;
+        min-width: 10px;
+    }
+
+}

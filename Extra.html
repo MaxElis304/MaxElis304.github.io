@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Компьютерные Комплектуюшие от MaxElis</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Компьютерные комплектующие. Цены, фотографии и характеристики">
+    <meta name="keywords" content="Компюьтер, комплектующие, RTX, 3080, 3060, NVIDIA, AMD, MaxElis, компьютерные, характеристики, описание, цены, 2080, TI">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/Extra.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="/res/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/res/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/res/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/res/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/res/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/res/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/res/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/res/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/res/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/res/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/res/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/res/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/res/icons/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/res/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<main>
+    <div class="cart">
+        <ul></ul>
+        <div>
+        <button id="add">Добавить товар</button><br>
+        <button id="showRange">Диапазон</button><br>
+        <button id="sort">Сортировка</button>
+        <p>Сумма: </p>
+        </div>
+    </div>
+  <script>
+    "use strict";
+
+    var itemList = [];
+
+    function newItem (name, price) {
+      itemList.push ({
+        name: name,
+        price: +price
+      });
+      showItemInList (name, price, itemList.length - 1);
+      updatePrice();
+    }
+
+    function showItemInList (name, price, index) {
+      let item = document.createElement('li');
+      item.id = "cart-item-" + index;
+      item.innerHTML = "<span>" + name + " " + price + "</span>";
+      let button = document.createElement('button');
+      button.innerText = "Удалить";
+      button.onclick = function () {
+        if (itemList.length == 1) {
+          itemList = [];
+        }
+        itemList.splice (index, 1);
+        let elem = document.getElementById("cart-item-" + index);
+        elem.remove();
+        updatePrice();
+      }
+      item.appendChild(button);
+
+      document.querySelector('.cart > ul').appendChild(item);
+    }
+
+    function updatePrice () {
+      let price = 0;
+      for (let item of itemList) {
+        price += item.price;
+      }
+      document.querySelector('.cart > div > p').innerText = "Сумма: " + price;
+    }
+
+    add.onclick = function () {
+      newItem (prompt("Имя"), +prompt("Цена"));
+    }
+
+    showRange.onclick = function () {
+      let min = +prompt("Мин");
+      let max = +prompt("Макс");
+      getRange (itemList, min, max);
+    }
+
+    function getRange (items, min, max) {
+      let arr = [];
+      for (let item of itemList) {
+        if (item.price >= min && item.price <= max) {
+          arr.push (item.price);
+        }
+      }
+      alert (arr);
+    }
+
+    function compareItems (a, b) {
+      if (a.price > b.price) return 1;
+      if (a.price == b.price) return 0;
+      if (a.price < b.price) return -1;
+    }
+
+    sort.onclick = function () {
+      itemList.sort(compareItems);
+      document.querySelector('.cart > ul').innerText = "";
+      for (let i = 0; i < itemList.length; i++) {
+        showItemInList (itemList[i].name, itemList[i].price, i);
+      }
+    }
+
+    function addAlert (text) {
+      let item = document.createElement('li');
+      item.innerText = text;
+      document.getElementById('alert-list').appendChild(item);
+      document.getElementById('alert-count').innerHTML++;
+    }
+
+    var alertAddInterval = setInterval(addAlert, 3000);
+
+    a.onclick = function () {
+      clearInterval (alertAddInterval);
+      setTimeout (() => {
+        alertAddInterval = setInterval(addAlert, 3000);
+      }, 10000)
+    }
+  </script>
+</main>
+<main style="padding: 20px;">
+
+  <form class="form">
+    <span>Введите</span>
+    <input type="text" required>
+    <label for="captcha">
+      Капча
+      <input type="checkbox" id="captcha" required></button>
+    </label>
+    <button type="submit" required>Отправить</button>
+  </form>
+
+  <div class="cart">
+    <p id="sum">Сумма: </p>
+    <button id="initialize">Инициализировать</button>
+    <button id="addd">Добавить</button>
+  </div>
+
+  <button id="trunc">Транкейт</button>
+
+  <script>
+    function makeStringCaptcha (maxSize) {
+      let size = maxSize / 2 + Math.floor(Math.random() * maxSize / 2)
+      let result = "";
+      let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+      for (let i = 0; i < size; i++) {
+        result += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+      return result;
+    }
+
+    function numCaptcha () {
+      let a = Math.floor(Math.random() * 100);
+      let b = Math.floor(Math.random() * 100);
+      return prompt (a + "+" + b + "=") == a + b;
+    }
+
+    captcha.onclick = function () {
+      let checkbox = document.getElementById("captcha");
+      if (checkbox.checked === true) {
+        let captcha = makeStringCaptcha(10);
+        if (prompt (captcha) == captcha || numCaptcha()) {
+          checkbox.checked = true;
+        } else {
+          checkbox.checked = false;
+        }
+      } else {
+        checkbox.checked = true;
+      }
+    }
+
+    function Accumulator (startingValue) {
+      this.value = +startingValue;
+      this.read = function () {
+        let addd = prompt ("Введите число для прибавления");
+        this.value += +addd;
+        this.update();
+      }
+      this.update = function () {
+        sum.textContent = "Сумма: " + this.value;
+      }
+    }
+
+    var cart;
+    initialize.onclick = function () {
+      cart = new Accumulator(prompt("Начальное значение"));
+      cart.update();
+
+    }
+    addd.onclick = function () {
+      cart?.read();
+    }
+
+    truncate = function (str, maxlength) {
+      if (str.length <= maxlength) {
+        return str;
+      } else {
+        return str.substr (0, maxlength - 3) + "...";
+      }
+    }
+
+    trunc.onclick = function () {
+      alert (truncate (prompt ("Введите строку"), +prompt ("Введите длинну")));
+    }
+  </script>
+</main>
+</html>

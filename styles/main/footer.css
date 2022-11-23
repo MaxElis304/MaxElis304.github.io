@@ -1,0 +1,111 @@
+.footer-wrap {
+    background: url(http://hassandesigns.top/html/classified/images/footer-bg.jpg) no-repeat top;
+    padding-top: 30px;
+    background-size: cover;
+}
+
+.footer-wrap h3 {
+    color: #fdbd50;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.footer-wrap p {
+    font-size: 14px;
+    line-height: 24px;
+    color: #5d849f;
+    margin-top: 15px;
+}
+
+.footer-wrap p a {
+    color: #5d849f;
+    text-decoration: underline;
+    font-style: italic;
+}
+
+.footer-wrap p a:hover {
+    text-decoration: none;
+    color: #ff7800;
+}
+
+.footer-links li a {
+    font-size: 14px;
+    line-height: 26px;
+    color: #5d849f;
+    text-decoration: none;
+}
+
+
+.footer-links li:before {
+    content: "\f105";
+    font-family: 'FontAwesome';
+    padding-right: 10px;
+    color: #5d849f;
+}
+
+.footer-category li a {
+    font-size: 14px;
+    line-height: 26px;
+    color: #5d849f;
+    text-decoration: none;
+}
+
+.footer-category li:before {
+    content: "\f105";
+    font-family: 'FontAwesome';
+    padding-right: 10px;
+    color: #5d849f;
+}
+
+.address {
+
+    color: #5d849f;
+    font-size: 14px;
+    position: relative;
+    padding-left: 30px;
+    line-height: 30px;
+}
+
+.address:before {
+    content: "\f277";
+    font-family: 'FontAwesome';
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.info a {
+
+    color: #5d849f;
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: normal;
+}
+
+.fa-phone:before {
+    content: "\f095";
+}
+
+.info a {
+
+    color: #5d849f;
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: normal;
+}
+
+.fa-envelope:before {
+    content:"\f0e0"
+}
+
+.copyright {
+    border-top: 1px solid #5f5f5f;
+    font-size: 14px;
+    color: #5d849f;
+    margin-top: 25px;
+    padding-top: 10px;
+    text-align: center;
+    padding-bottom: 10px;
+}
