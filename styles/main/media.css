@@ -1,11 +1,9 @@
-@media (max-width: 1047px){
-    .title{
-        text-align: right;
-    }
+@media (max-width: 1400px){
+
     .title h1{
 
         font-size: 2em;
-        top: 20px;
+        top: 30px;
         display: inline-block;
     }
     .title h1::before{
@@ -21,22 +19,28 @@
         border-left-color: transparent;
         border-right-color: transparent;
     }
+    .extra{
+        visibility: hidden;
+    }
 }
 @media (max-width: 2618px){
     .topmenu > li {
         width: auto;
     }
 }
-@media (max-width: 628px) {
+
+@media (max-width: 800px) {
     header {
         margin-bottom: 10px;
         justify-content: center;
         background-position: center center;
     }
-    .video_bg{
+
+    .video_bg {
         overflow: hidden;
     }
-    .video_media{
+
+    .video_media {
         position: relative;
         top: 50%;
         left: 50%;
@@ -172,18 +176,29 @@
         right: 65px;
         min-width: 10px;
     }
-    .form_button{
+
+    .form_button {
         font-size: 12px;
-        top: 200px;
+        top: 180px;
         margin-left: 50%;
         margin-right: 5%;
     }
-    .extra{
+
+    .extra {
         font-size: 12px;
         visibility: hidden;
     }
-    .logo{
+
+    .logo {
         visibility: hidden;
     }
 
+}
+@media(max-width: 608px){
+    .form_button {
+        font-size: 12px;
+        top: 210px;
+        margin-left: 50%;
+        margin-right: 5%;
+    }
 }
