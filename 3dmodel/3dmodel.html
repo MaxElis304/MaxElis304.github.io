@@ -27,7 +27,7 @@
     </head>
 
     <body>
-        <script src="three.min.js"></script>
+        <script src="three.js"></script>
 
         <script src="GLTFLoader.js"></script>
         <script>
@@ -55,7 +55,6 @@
                 const gltfLoader = new THREE.GLTFLoader();
                 gltfLoader.load('scene.gltf', function (gltf) {
                     pc = gltf.scene.children[0];
-                    pc.scale.set(0.5,0.5,0.5);
                     scene.add(gltf.scene);
                     renderer.render(scene, camera);
                 });
