@@ -48,7 +48,81 @@ header{
             0 0 7px #ffbf50,
             0 0 3px #ffffff,
             0 0 10px #ffbf50;
+
 }
+.title h1 .span1{
+    animation: neon-1 linear infinite 3s;
+}
+
+.title h1 .span2{
+    animation: neon-5 linear infinite 3s;
+}
+@keyframes neon-1 {
+    58% {
+        color: inherit;
+        text-shadow: inherit;
+    }
+    59%{
+        color: #0b3960;
+    }
+    60% {
+        text-shadow: none;
+    }
+    61% {
+        color: inherit;
+        text-shadow: inherit;
+    }
+    62% {
+        color: #0b3960;
+        text-shadow: none;
+    }
+    63% {
+        color: inherit;
+        text-shadow: inherit;
+    }
+    72% {
+        color: #0b3960;
+        text-shadow: none;
+    }
+    72.5% {
+        color: inherit;
+        text-shadow: inherit;
+    }
+}
+
+@keyframes neon-5 {
+    80% {
+        color: inherit;
+        text-shadow: inherit;
+    }
+    81%{
+        color: #0b3960;
+    }
+    82% {
+        text-shadow: none;
+    }
+    83% {
+        color: inherit;
+        text-shadow: inherit;
+    }
+    84% {
+        color: #0b3960;
+        text-shadow: none;
+    }
+    85% {
+        color: inherit;
+        text-shadow: inherit;
+    }
+    94% {
+        color: #0b3960;
+        text-shadow: none;
+    }
+    94.5% {
+        color: inherit;
+        text-shadow: inherit;
+    }
+}
+
 .title h1::before{
     content: "";
     position: absolute;
@@ -150,10 +224,7 @@ aside{
             0 0 3px #ffffff,
             0 0 10px #ffbf50;
 }
-@keyframes notif {
-    50%{transform: scale(1.1, 1.1)}
-    100%{transform: scale(0.9, 0.9)}
-}
+
 
 
 

@@ -40,7 +40,7 @@
 
 .footer-links li:before {
     content: "\f105";
-    font-family: 'FontAwesome';
+    font-family: 'FontAwesome', serif;
     padding-right: 10px;
     color: #5d849f;
 }
@@ -54,7 +54,7 @@
 
 .footer-category li:before {
     content: "\f105";
-    font-family: 'FontAwesome';
+    font-family: 'FontAwesome', serif;
     padding-right: 10px;
     color: #5d849f;
 }
@@ -70,7 +70,7 @@
 
 .address:before {
     content: "\f277";
-    font-family: 'FontAwesome';
+    font-family: 'FontAwesome', serif;
     position: absolute;
     top: 0;
     left: 0;

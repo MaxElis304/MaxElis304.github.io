@@ -19,52 +19,37 @@ nav a {
     position: relative;
     float: left;
     text-align: center;
-    width: calc(100%/9);
+    width: calc(100%/4);
 }
 .topmenu > li > a {
     font-family: 'Comfortaa', cursive;
     font-size: 15px;
     text-align: center;
-    line-height: 50px;
+    line-height: 100px;
     padding: 0 30px;
     font-weight: bold;
     color: #5d849f;
     text-transform: uppercase;
-
-    text-shadow:
-            0 0 5px #000000,
-            0 0 7px #003cff,
-            0 0 3px #ffffff,
-            0 0 1px #003cff;
+    text-decoration: none;
+    animation: 2s neon-2 alternate-reverse infinite linear;;
 
 }
-.down:after {
-    margin-left: 8px;
-    font-family: 'Comfortaa', cursive;
-}
+
 .topmenu li a:hover, .topmenu li a:focus { color: #fdbd50; }
-.submenu {
-    background: rgba(93, 132, 159, 0.62);
-    border: 2px solid #fdbd50;
-    position: absolute;
-    width: 100%;
-    visibility: hidden;
-    opacity: 0;
-    z-index: 5;
-    transform: perspective(600px) rotateX(-90deg);
-    transform-origin: 0% 0%;
-    transition: .6s ease-in-out;
-}
-.topmenu > li:hover .submenu, .topmenu > li:focus .submenu{
-    visibility: visible;
-    opacity: 1;
-    transform: perspective(600px) rotateX(0deg);
-}
-.submenu li a {
-    color: #fdbd50;
 
-    font-size: 16px;
-    line-height: 36px;
-    padding: 0 25px;
-    font-family: 'Comfortaa', cursive;
+@keyframes neon-2 {
+    from {
+        text-shadow:
+                0 0 5px #000000,
+                0 0 7px #003cff,
+                0 0 3px #ffffff,
+                0 0 1px #003cff;
+    }
+    to {
+        text-shadow:
+                0 0 10px #000000,
+                0 0 12px #003cff,
+                0 0 8px #ffffff,
+                0 0 6px #003cff;
+    }
 }
