@@ -1,41 +1,26 @@
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-nav a {
-    display: block;
-    text-decoration: none;
-    outline: none;
-    transition: .4s ease-in-out;
-}
-.topmenu {
+
+nav {
     backface-visibility: hidden;
     background: rgb(3, 9, 22);
 
 }
-.topmenu > li {
+nav a {
     display: inline-block;
-    position: relative;
     float: left;
     text-align: center;
     width: calc(100%/4);
-}
-.topmenu > li > a {
     font-family: 'Comfortaa', cursive;
     font-size: 15px;
-    text-align: center;
     line-height: 100px;
     padding: 0 30px;
     font-weight: bold;
     color: #5d849f;
     text-transform: uppercase;
+    animation: 2s neon-2 alternate-reverse infinite linear;
     text-decoration: none;
-    animation: 2s neon-2 alternate-reverse infinite linear;;
-
 }
 
-.topmenu li a:hover, .topmenu li a:focus { color: #fdbd50; }
+nav a:hover, nav a:focus { color: #fdbd50; }
 
 @keyframes neon-2 {
     from {
