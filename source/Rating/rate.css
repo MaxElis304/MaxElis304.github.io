@@ -302,7 +302,7 @@ body:hover .rate-box1:nth-child(2)>.ratebox:nth-child(6) .filler:before  {width:
         margin-left: 5%;
         margin-right: 5%;
         flex-direction: column;
-        z-index: 1;
+        z-index: -1;
         gap: 30px;
         height: auto;
         top: 30%
