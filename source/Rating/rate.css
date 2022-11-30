@@ -14,8 +14,9 @@ body {
     background:  linear-gradient(to bottom, #030914 0%, #080e30 100%) no-repeat ;
     display: flex;
     flex-direction: column;
-    min-height: calc(100vh - 0px);
+    height: 200vh;
     overflow: hidden;
+
 }
 .video_media{
     width: 100%;
@@ -304,10 +305,13 @@ body:hover .rate-box1:nth-child(2)>.ratebox:nth-child(6) .filler:before  {width:
         z-index: 1;
         gap: 30px;
         height: auto;
-        top: 40%
+        top: 30%
     }
     .name{
         height: 75px;
+    }
+    .num{
+        top: 75%;
     }
     .rate-box1{
         width: 90%;

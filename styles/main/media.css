@@ -177,6 +177,52 @@
 
     .navicon div:after { top: 7px; }
 
+    .contain{
+        margin-left: 5%;
+        margin-right: 5%;
+        flex-direction: column;
+        z-index: 1;
+        gap: 30px;
+        height: auto;
+        top: 40%
+    }
+    .name{
+        height: 75px;
+    }
+    .rate-box1{
+        width: 90%;
+        background-color: rgba(0, 0, 0, 0.32);
+        border-radius: 50px 50px;
+    }
+    .ratebox{
+        display: flex;
+        height: 75px;
+        justify-content: center;
+    }
+    .naming{
+        font-size: 12px;
+        justify-content: left;
+    }
+    .naming>a{
+        font-size: 12px;
+    }
+    .rate-box1:nth-child(1)>.ratebox:nth-child(n+2):nth-child(-n+5){
+        border-radius: 0 0 0 0;
+    }
+    .rate-box1:nth-child(2)>.ratebox:nth-child(n+2):nth-child(-n+5){
+        border-radius: 0 0 0 0;
+    }
+    .rate-box1:nth-child(1)>.ratebox:nth-child(6){
+        border-bottom-left-radius: 50px 50px;
+        border-top-left-radius: 0 0;
+        border-bottom-right-radius: 50px 50px;
+    }
+    .rate-box1:nth-child(2)>.ratebox:nth-child(6){
+        border-bottom-left-radius: 50px 50px;
+        border-top-left-radius: 0 0;
+        border-bottom-right-radius: 50px 50px;
+    }
+
 }
 @media(max-width: 608px){
     .form_button {
