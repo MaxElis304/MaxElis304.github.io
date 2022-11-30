@@ -15,6 +15,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: calc(100vh - 0px);
+    overflow: hidden;
 }
 .video_media{
     width: 100%;
@@ -178,5 +179,167 @@ nav a:hover, nav a:focus { color: #fdbd50; }
                 0 0 12px #003cff,
                 0 0 8px #ffffff,
                 0 0 6px #003cff;
+    }
+}
+
+.contain{
+    position: absolute;
+    display: flex;
+    top: 25%;
+    height: 50vh;
+    width: 100%;
+    flex-direction: row;
+
+}
+
+.rate-box1{
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+}
+.name{
+    height: 7%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #5d849f;
+
+}
+.rate-name{
+    font-family: 'Comfortaa', cursive;
+    text-align: center;
+    font-weight: bold;
+    color: #5d849f;
+    text-transform: uppercase;
+    animation: 2s neon-2 alternate-reverse infinite linear;
+}
+.num{
+    position: absolute;
+    top: 25%;
+    right: 10px;
+    text-transform: uppercase;
+    animation: 2s neon-2 alternate-reverse infinite linear;
+    font-family: 'Comfortaa', cursive;
+    font-weight: bold;
+    font-size: 24px;
+
+}
+.ratebox{
+    height: calc(93%/5);
+    width: 100%;
+    border-top-left-radius: 15% 50px;
+    border-bottom-right-radius: 15% 50px;
+    background-color: rgba(0, 0, 0, 0.32);
+    color: #5d849f;
+    display: flex;
+    flex-direction: column;
+}
+.naming{
+    display: flex;
+    width: 70%;
+    height: 50%;
+    transform: translate(20%);
+    justify-content: center;
+    align-items: center;
+}
+.filler{
+    border: 1px solid rgba(193, 138, 246, 0.73);
+    border-radius: 10px;
+    width: 70%;
+    height: 25%;
+    transform: translate(20%, 50%);
+}
+.filler:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgba(48, 128, 75, 0.85);
+    border-radius: 10px;
+    transition: width 3s ease;
+}
+
+body:hover .filler:before{
+    width: 100%;
+}
+
+body:hover .ratebox:nth-child(3) .filler:before  {width: 86.9%;}
+body:hover .ratebox:nth-child(4) .filler:before  {width: 76.08%;}
+body:hover .ratebox:nth-child(5) .filler:before  {width: 73.67%;}
+body:hover .ratebox:nth-child(6) .filler:before  {width: 69.98%;}
+
+body:hover .rate-box1:nth-child(2)>.ratebox:nth-child(3) .filler:before  {width: 99.16%;}
+body:hover .rate-box1:nth-child(2)>.ratebox:nth-child(4) .filler:before  {width: 59.30%;}
+body:hover .rate-box1:nth-child(2)>.ratebox:nth-child(5) .filler:before  {width: 51.66%;}
+body:hover .rate-box1:nth-child(2)>.ratebox:nth-child(6) .filler:before  {width: 46.59%;}
+
+@media(max-width: 1300px){
+    body{
+        overflow: visible;
+    }
+    header {
+        margin-bottom: 10px;
+        justify-content: center;
+        background-position: center center;
+    }
+    .video_bg {
+        overflow: hidden;
+    }
+
+    .video_media {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        width: 400%;
+
+        transform: translate(-50%);
+    }
+    .contain{
+        margin-left: 5%;
+        margin-right: 5%;
+        flex-direction: column;
+        z-index: 1;
+        gap: 30px;
+        height: auto;
+        top: 40%
+    }
+    .name{
+        height: 75px;
+    }
+    .rate-box1{
+        width: 90%;
+        background-color: rgba(0, 0, 0, 0.32);
+        border-radius: 50px 50px;
+    }
+    .ratebox{
+        display: flex;
+        height: 75px;
+        justify-content: center;
+    }
+    .naming{
+        font-size: 12px;
+        justify-content: left;
+    }
+    .naming>a{
+        font-size: 12px;
+    }
+    .rate-box1:nth-child(1)>.ratebox:nth-child(n+2):nth-child(-n+5){
+        border-radius: 0 0 0 0;
+    }
+    .rate-box1:nth-child(2)>.ratebox:nth-child(n+2):nth-child(-n+5){
+        border-radius: 0 0 0 0;
+    }
+    .rate-box1:nth-child(1)>.ratebox:nth-child(6){
+        border-bottom-left-radius: 50px 50px;
+        border-top-left-radius: 0 0;
+        border-bottom-right-radius: 50px 50px;
+    }
+    .rate-box1:nth-child(2)>.ratebox:nth-child(6){
+        border-bottom-left-radius: 50px 50px;
+        border-top-left-radius: 0 0;
+        border-bottom-right-radius: 50px 50px;
     }
 }

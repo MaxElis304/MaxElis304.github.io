@@ -110,6 +110,7 @@
         clip-path: circle(24px at 32px 24px);
         -webkit-transition: -webkit-clip-path 0.5625s, clip-path 0.375s;
         transition: -webkit-clip-path 0.5625s, clip-path 0.375s;
+        z-index: 1000;
 
     }
 
@@ -118,10 +119,13 @@
         transition-timing-function: ease-out;
         -webkit-transition-duration: 0.75s;
         transition-duration: 0.75s;
-        -webkit-clip-path: circle(500px at 225px 24px);
-        clip-path: circle(500px at 150px 24px);
+        -webkit-clip-path: circle(100px at 32px 24px);
+        clip-path: circle(400px at 32px 24px);
+        z-index: 1000;
     }
-
+    nav>a{
+        z-index: 100;
+    }
     nav a {
         display: block;
         line-height: 50px;
@@ -136,6 +140,7 @@
         width: auto;
         text-align: left;
         text-decoration: none;
+        z-index: 1000;
     }
 
     nav a:hover { background: #ffe082; }
@@ -148,6 +153,7 @@
         -webkit-transform-origin: 32px 24px;
         -ms-transform-origin: 32px 24px;
         transform-origin: 32px 24px;
+
     }
 
     .navicon div {
