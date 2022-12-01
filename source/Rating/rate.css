@@ -5,13 +5,9 @@
 html, body{
     padding: 0;
     margin: 0;
-    border: 1px red solid;
 }
 head{
     display: flex;
-}
-html{
-    height: 100%;
 }
 body {
     background:  linear-gradient(to bottom, #030914 0%, #080e30 100%) no-repeat ;
