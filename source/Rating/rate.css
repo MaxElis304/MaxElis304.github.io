@@ -356,20 +356,20 @@ body:hover .rate-box1:nth-child(2)>.ratebox:nth-child(6) .filler:before  {width:
     }
 
 }
-@media(max-width: 400px){
+@media(min-width: 1400px){
     html{
-        height: 170%;
+        height: 100%;
     }
     body{
-        min-height: 170vh;
-        overflow: hidden;
+        min-height: 100vh;
     }
     .video_bg {
-        height: 170vh;
+        height: 100vh;
     }
 
     .video_media {
         position: relative;
+        height: 100vh;
         left: 50%;
         width: 400vw;
         transform: translate(-50%);
