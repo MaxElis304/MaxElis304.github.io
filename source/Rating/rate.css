@@ -21,6 +21,7 @@ body {
 }
 .video_bg{
     opacity: 0.7;
+    display: flex;
 }
 
 header{
