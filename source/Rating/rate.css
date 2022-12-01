@@ -9,6 +9,9 @@ html, body{
 head{
     display: flex;
 }
+html{
+    height: 100%;
+}
 body {
     background:  linear-gradient(to bottom, #030914 0%, #080e30 100%) no-repeat ;
     display: flex;
@@ -352,4 +355,22 @@ body:hover .rate-box1:nth-child(2)>.ratebox:nth-child(6) .filler:before  {width:
         height: 20%;
     }
 
+}
+@media(max-width: 400px){
+    html{
+        height: 170%;
+    }
+    body{
+        min-height: 170vh;
+    }
+    .video_bg {
+        height: 170vh;
+    }
+
+    .video_media {
+        position: relative;
+        left: 50%;
+        width: 400vw;
+        transform: translate(-50%);
+    }
 }
