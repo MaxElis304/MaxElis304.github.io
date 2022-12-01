@@ -362,6 +362,7 @@ body:hover .rate-box1:nth-child(2)>.ratebox:nth-child(6) .filler:before  {width:
     }
     body{
         min-height: 170vh;
+        overflow: hidden;
     }
     .video_bg {
         height: 170vh;
