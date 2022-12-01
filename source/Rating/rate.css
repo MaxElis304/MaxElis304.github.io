@@ -298,14 +298,21 @@ body:hover .rate-box1:nth-child(2)>.ratebox:nth-child(6) .filler:before  {width:
 
         transform: translate(-50%);
     }
+    nav{
+        position: relative;
+        z-index: 100;
+        color: #5D849FFF;
+        background: white;
+        backface-visibility: visible;
+    }
     .contain{
-        margin-left: 5%;
-        margin-right: 5%;
         flex-direction: column;
         z-index: 1;
         gap: 30px;
         height: auto;
-        top: 30%
+        top: 30%;
+        width: 100%;
+        padding-left: 9%;
     }
     .name{
         height: 75px;
@@ -343,4 +350,11 @@ body:hover .rate-box1:nth-child(2)>.ratebox:nth-child(6) .filler:before  {width:
         border-top-left-radius: 0 0;
         border-bottom-right-radius: 50px 50px;
     }
+}
+
+@media(max-width: 500px){
+    header{
+        height: 20%;
+    }
+
 }

@@ -30,7 +30,10 @@
         justify-content: center;
         background-position: center center;
     }
-
+    body{
+        height: 150vh;
+        margin-right: 0;
+    }
     .video_bg {
         overflow: hidden;
     }
@@ -119,18 +122,16 @@
         transition-timing-function: ease-out;
         -webkit-transition-duration: 0.75s;
         transition-duration: 0.75s;
+        background-color: rgba(4, 10, 25, 0.79);
         -webkit-clip-path: circle(100px at 32px 24px);
         clip-path: circle(400px at 32px 24px);
         z-index: 1000;
     }
-    nav>a{
-        z-index: 100;
-    }
+
     nav a {
         display: block;
         line-height: 50px;
         padding: 0 20px;
-        color: inherit;
         cursor: pointer;
         -webkit-user-select: none;
         -moz-user-select: none;
@@ -140,10 +141,16 @@
         width: auto;
         text-align: left;
         text-decoration: none;
-        z-index: 1000;
+        color: #5d849f;
+
+
     }
 
-    nav a:hover { background: #ffe082; }
+    nav a:hover {
+        background: #ffe082;
+        color: #c44646;
+        animation: none;
+    }
 
     nav a:active { background: #ffca28; }
 
@@ -176,6 +183,7 @@
     .navicon div:before { top: -7px; }
 
     .navicon div:after { top: 7px; }
+
 }
 @media(max-width: 608px){
     .form_button {
