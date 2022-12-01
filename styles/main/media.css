@@ -26,24 +26,25 @@
 
 @media (max-width: 800px) {
     header {
-        margin-bottom: 10px;
         justify-content: center;
         background-position: center center;
     }
+    html{
+        height: 150%;
+    }
     body{
-        height: 150vh;
-        margin-right: 0;
+        min-height: 150vh;
     }
     .video_bg {
         overflow: hidden;
+        height: 150vh;
     }
 
     .video_media {
         position: relative;
-        top: 50%;
+        min-height: 150%;
         left: 50%;
-        width: 400%;
-
+        width: 400vw;
         transform: translate(-50%);
     }
 
