@@ -178,6 +178,9 @@
 
     .navicon div:after { top: 7px; }
 
+    .welcome{
+        font-size: 20px;
+    }
 }
 @media(max-width: 608px){
     .form_button {
