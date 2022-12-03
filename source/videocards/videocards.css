@@ -25,9 +25,13 @@ body {
     display: flex;
     top: 10px;
     right: 10px;
-    height: 10%;
+    height: fit-content;
+    padding-left: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 10px;
     width: 15%;
-    background-color: rgba(0, 0, 0, 0.39);
+    background-color: rgba(164, 44, 44, 0.47);
     border-radius: 20px;
     justify-content: center;
     align-items: center;
@@ -50,7 +54,6 @@ body {
     align-items: center;
     height: 10vh;
     color: #b2af19;
-    border: 1px solid blue;
     font-size: 40px;
 }
 
@@ -76,7 +79,6 @@ body {
 }
 .container-02{
     position: relative;
-    border: 1px solid #11ff00;
     display: flex;
     flex-direction: row;
     height: fit-content;
@@ -93,7 +95,6 @@ body {
     align-items: center;
     padding-top: 10px;
     padding-bottom: 10px;
-    border: 1px solid red;
     height: 100%;
     width: 50%;
     opacity: 0;
@@ -227,6 +228,7 @@ body {
         right: 70px;
         bottom: 10px;
         z-index: 10;
+        width: fit-content;
     }
     .main-text{
         font-size: 30px;
