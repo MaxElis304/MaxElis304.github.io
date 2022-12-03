@@ -224,7 +224,7 @@ aside{
             0 0 10px #ffbf50;
 }
 
-.contain{
+#contain{
     display: flex;
     position: absolute;
     height: 75%;
