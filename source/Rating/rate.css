@@ -279,6 +279,9 @@ body:hover .rate-box1:nth-child(2)>.ratebox:nth-child(5) .filler:before  {width:
 body:hover .rate-box1:nth-child(2)>.ratebox:nth-child(6) .filler:before  {width: 46.59%;}
 
 @media(max-width: 1300px){
+    header{
+        height: 30%;
+    }
     body{
         min-height: 150vh;
     }
