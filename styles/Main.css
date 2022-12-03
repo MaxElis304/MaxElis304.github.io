@@ -26,7 +26,6 @@ head{
 
 header{
 	width: 100%;
-    max-height: 100vh;
     position: absolute;
 	
 }
@@ -225,6 +224,24 @@ aside{
             0 0 10px #ffbf50;
 }
 
+.contain{
+    display: flex;
+    position: absolute;
+    height: 75%;
+    width: 100vw;
+    top: 25%;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Comfortaa', cursive;
+    font-weight: bold;
+    color: #5d849f;
+    text-transform: uppercase;
+    animation: 2s neon-2 alternate-reverse infinite linear;
+    font-size: 30px;
+}
 
+.welcome{
+    text-align: center;
+}
 
 
