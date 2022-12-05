@@ -201,6 +201,7 @@ aside{
 
 #extra{
     position: absolute;
+    visibility: hidden;
 }
 .extra{
     color: #5D849FFF;

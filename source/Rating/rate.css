@@ -262,6 +262,7 @@ nav a:hover, nav a:focus { color: #fdbd50; }
     background: rgba(48, 128, 75, 0.85);
     border-radius: 10px;
     transition: width 3s ease;
+
 }
 
 body:hover .filler:before{
