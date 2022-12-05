@@ -60,11 +60,11 @@
     <div class="form_group">
         <label class="form_label">Пол</label><br><br>
         <label>
-            <input type="radio" value="male" name="sex" checked> Мужской
+            <input type="radio" value="male" name="sex" checked> <a style="color: #f8eeee">Мужской</a>
 
         </label>
         <label>
-            <input type="radio" value="female" name="sex" > Женский
+            <input type="radio" value="female" name="sex" > <a style="color: #F8EEEEFF">Женский</a>
             <label class="form_label">Пол</label>
         </label>
     </div>
@@ -87,8 +87,6 @@
 
 </body>
 <script type="text/javascript">
-    "use strict"
-
     login.onclick = function () {
         while (!confirm("Желаете пройти регистрацию на сайте?")) {
             alert("Попробуйте ещё раз");
