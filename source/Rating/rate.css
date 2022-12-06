@@ -358,4 +358,18 @@ body:hover .rate-box1:nth-child(2)>.ratebox:nth-child(6) .filler:before  {width:
     }
 
 }
+@media(max-height: 778px){
+    header{
+        height: 20%;
+    }
+    html{
+        min-height: 200vh;
+    }
+}
+@media(max-height: 550px){
+
+    html{
+        min-height: 250vh;
+    }
+}
 
