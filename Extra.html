@@ -25,193 +25,105 @@
     <meta name="msapplication-TileImage" content="/res/icons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 </head>
-<main>
-    <div class="cart">
-        <ul></ul>
-        <div>
-        <button id="add">Добавить товар</button><br>
-        <button id="showRange">Диапазон</button><br>
-        <button id="sort">Сортировка</button>
-        <p>Сумма: </p>
-        </div>
+<aside id="alert-container">
+    <div id="alert-head">
+        <button id="a"></button>
+        <p id="alert-count">0</p>
     </div>
-  <script>
-    "use strict";
+    <ul id="alert-list">
 
-    var itemList = [];
+    </ul>
+    <ul id="notification-container"></ul>
 
-    function newItem (name, price) {
-      itemList.push ({
-        name: name,
-        price: +price
-      });
-      showItemInList (name, price, itemList.length - 1);
-      updatePrice();
-    }
+</aside>
+<main>
+    <div>
+        <h3>Ссылки</h3>
+        <ul>
+            <li><a href="https://ya.ru">https://ya.ru</a></li>
+            <li><a href="./lastone.html">./home_page.html</a></li>
+            <li><a href="https://ru.wikipedia.org/wiki/Apex_Legends">https://ru.wikipedia.org/wiki/Apex_Legends</a></li>
+        </ul>
+    </div>
 
-    function showItemInList (name, price, index) {
-      let item = document.createElement('li');
-      item.id = "cart-item-" + index;
-      item.innerHTML = "<span>" + name + " " + price + "</span>";
-      let button = document.createElement('button');
-      button.innerText = "Удалить";
-      button.onclick = function () {
-        if (itemList.length == 1) {
-          itemList = [];
+    <div class="list-container">
+        <h3>Список</h3>
+        <ul id="list"></ul>
+        <button id="list-button">Добавить</button>
+    </div>
+
+    <div>
+        <h3>Уведомление</h3>
+        <button id="show-alert">Показать</button>
+    </div>
+
+    <script>
+        let links = document.querySelectorAll("a");
+        for (let elem of links) {
+            if(elem.href.includes("://") && !elem.href.includes("localhost") && !elem.href.includes("file:///")) {
+                elem.style.color = "red";
+            }
         }
-        itemList.splice (index, 1);
-        let elem = document.getElementById("cart-item-" + index);
-        elem.remove();
-        updatePrice();
-      }
-      item.appendChild(button);
 
-      document.querySelector('.cart > ul').appendChild(item);
-    }
+        let list = document.getElementById("list-button");
+        list.addEventListener ("click", e => {
+            while (true) {
+                let content = prompt ("Введите содержимое пункта");
+                if (!content) {
+                    break;
+                }
+                let elem = document.createElement("li");
+                elem.innerText = content;
+                document.getElementById("list").appendChild(elem);
+            }
+        })
 
-    function updatePrice () {
-      let price = 0;
-      for (let item of itemList) {
-        price += item.price;
-      }
-      document.querySelector('.cart > div > p').innerText = "Сумма: " + price;
-    }
+        let i = 0;
+        let showAlert = document.getElementById("show-alert");
+        showAlert.addEventListener ("click", e => {
+            let elem = document.createElement("li");
+            elem.className = "notification";
+            let text = document.createElement("p");
+            text.innerText = "Это уведомление " + i; i++;
+            elem.appendChild(text);
+            document.getElementById("notification-container").appendChild(elem);
+            addAlert ("Это уведомление");
+            setTimeout (() => {
+                elem.classList.add("notification-shown");
+            }, 0);
+            setTimeout (() => {
+                elem.classList.remove("notification-shown");
+            }, 2000);
+            setTimeout (() => {
+                elem.remove();
+            }, 2500)
+        })
 
-    add.onclick = function () {
-      newItem (prompt("Имя"), +prompt("Цена"));
-    }
-
-    showRange.onclick = function () {
-      let min = +prompt("Мин");
-      let max = +prompt("Макс");
-      getRange (itemList, min, max);
-    }
-
-    function getRange (items, min, max) {
-      let arr = [];
-      for (let item of itemList) {
-        if (item.price >= min && item.price <= max) {
-          arr.push (item.price);
+        function addAlert (text) {
+            let item = document.createElement('li');
+            let button = document.createElement('button');
+            button.innerText = "x";
+            button.className = "del"
+            item.innerText = text;
+            item.appendChild(button);
+            document.getElementById('alert-list').appendChild(item);
+            document.getElementById('alert-count').innerHTML++;
         }
-      }
-      alert (arr);
-    }
 
-    function compareItems (a, b) {
-      if (a.price > b.price) return 1;
-      if (a.price == b.price) return 0;
-      if (a.price < b.price) return -1;
-    }
+        let alertList = document.getElementById("alert-list");
+        alertList.addEventListener ("click", e => {
+            if (e.target.className === "del") {
+                e.target.parentElement.remove();
+                document.getElementById("alert-count").innerText--;
+            }
+        })
 
-    sort.onclick = function () {
-      itemList.sort(compareItems);
-      document.querySelector('.cart > ul').innerText = "";
-      for (let i = 0; i < itemList.length; i++) {
-        showItemInList (itemList[i].name, itemList[i].price, i);
-      }
-    }
-
-    function addAlert (text) {
-      let item = document.createElement('li');
-      item.innerText = text;
-      document.getElementById('alert-list').appendChild(item);
-      document.getElementById('alert-count').innerHTML++;
-    }
-
-    var alertAddInterval = setInterval(addAlert, 3000);
-
-    a.onclick = function () {
-      clearInterval (alertAddInterval);
-      setTimeout (() => {
-        alertAddInterval = setInterval(addAlert, 3000);
-      }, 10000)
-    }
-  </script>
-</main>
-<main style="padding: 20px;">
-
-  <form class="form">
-    <span>Введите</span>
-    <input type="text" required>
-    <label for="captcha">
-      Капча
-      <input type="checkbox" id="captcha" required></button>
-    </label>
-    <button type="submit" required>Отправить</button>
-  </form>
-
-  <div class="cart">
-    <p id="sum">Сумма: </p>
-    <button id="initialize">Инициализировать</button>
-    <button id="addd">Добавить</button>
-  </div>
-
-  <button id="trunc">Транкейт</button>
-
-  <script>
-    function makeStringCaptcha (maxSize) {
-      let size = maxSize / 2 + Math.floor(Math.random() * maxSize / 2)
-      let result = "";
-      let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-      for (let i = 0; i < size; i++) {
-        result += chars.charAt(Math.floor(Math.random() * chars.length));
-      }
-      return result;
-    }
-
-    function numCaptcha () {
-      let a = Math.floor(Math.random() * 100);
-      let b = Math.floor(Math.random() * 100);
-      return prompt (a + "+" + b + "=") == a + b;
-    }
-
-    captcha.onclick = function () {
-      let checkbox = document.getElementById("captcha");
-      if (checkbox.checked === true) {
-        let captcha = makeStringCaptcha(10);
-        if (prompt (captcha) == captcha || numCaptcha()) {
-          checkbox.checked = true;
-        } else {
-          checkbox.checked = false;
+        function res(){
+            cent = document.getElementById("centered");
+            cent.style.marginLeft = ((window.innerWidth - cent.clientWidth) / 2).toString()+"px";
+            cent.style.marginTop = ((window.innerHeight - cent.clientHeight) / 2).toString()+"px";
         }
-      } else {
-        checkbox.checked = true;
-      }
-    }
-
-    function Accumulator (startingValue) {
-      this.value = +startingValue;
-      this.read = function () {
-        let addd = prompt ("Введите число для прибавления");
-        this.value += +addd;
-        this.update();
-      }
-      this.update = function () {
-        sum.textContent = "Сумма: " + this.value;
-      }
-    }
-
-    var cart;
-    initialize.onclick = function () {
-      cart = new Accumulator(prompt("Начальное значение"));
-      cart.update();
-
-    }
-    addd.onclick = function () {
-      cart?.read();
-    }
-
-    truncate = function (str, maxlength) {
-      if (str.length <= maxlength) {
-        return str;
-      } else {
-        return str.substr (0, maxlength - 3) + "...";
-      }
-    }
-
-    trunc.onclick = function () {
-      alert (truncate (prompt ("Введите строку"), +prompt ("Введите длинну")));
-    }
-  </script>
+        setInterval(res, 100);
+    </script>
 </main>
 </html>

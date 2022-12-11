@@ -223,15 +223,17 @@ body {
 }
 
 @media(max-width: 800px){
+
     .back{
         top: auto;
         right: 70px;
         bottom: 10px;
         z-index: 10;
         width: fit-content;
+        opacity: 0.3;
     }
-    .main-text{
-
+    .back:hover, .back:focus{
+        opacity: 0.8;
     }
     .container-02{
         flex-direction: column;
@@ -247,6 +249,7 @@ body {
         min-width: 100%;
     }
     .text{
+        padding-top: 20px;
         height: 40%;
         font-size: 30px;
     }

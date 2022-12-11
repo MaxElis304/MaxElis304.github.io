@@ -1,4 +1,122 @@
-.cart{
+#alert-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin: 1%;
+    background-color: white;
+    border-radius: 1.75em;
+    margin: 1em;
+    height: 3.5em;
+    width: 3.5em;
+    transition: height .5s .25s, width .25s;
+}
+#alert-head {
+    width: 100%;
+    height: 3.5em;
+    background-color: #0c16de;
+    border-radius: 1.75em;
+}
+#alert-count {
+    margin: 0;
+    position: absolute;
+    top: -.3em;
+    right: -.2em;
+    background-color: rgb(255, 0, 85);
+    width: 1.25em;
+    height: 1.25em;
+    text-align: center;
+    border-radius: 50%;
+    color: white;
+}
+
+#alert-list {
+    display:none;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 82%;
+    background-color: #7dc03f;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 0 0 1.75em 1.75em;
+}
+#alert-list > li {
+    margin: .0em 0 0 0;
+    overflow-wrap: break-word;
+    padding: .75em 0 .75em 0;
+}
+#alert-list > li::before {
+    content: counter(list-item);
+    margin: 1em;
+    padding: .5em .8em;
+    background-color: #b3f5e6;
+    border-radius: 2em;
+}
+#alert-list > li:first-child {
+    margin-top: .5em;
+}
+
+#alert-container:hover > #alert-head {
+    border-radius: 1.75em 1.75em 0 0;
+}
+#alert-container:hover {
+    width: 15em;
+    height: 20em;
+}
+#alert-container:hover > ul {
     display: flex;
-    border: 1px #c44646;
+}
+
+#alert-list > li:hover {
+    border-radius: 1em;
+    background-color: #f5b3d6;
+    transform: scale(1.05);
+}
+#alert-list > li:hover::before {
+    background-color: #55a236;
+}
+#alert-list::-webkit-scrollbar {
+    width: 0px;
+}
+#alert-head > button {
+    background: transparent;
+    border: none;
+}
+
+
+#notification-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 4em;
+    right: -1em;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 11em;
+    transition: 0.5s;
+}
+.notification {
+    background: wheat;
+    border-radius: 0.5em;
+    opacity: 0;
+    transition: .5s;
+    margin: 0.5em;
+}
+.notification > p {
+    margin: 0.5em;
+}
+
+.notification-shown {
+    opacity: 1;
+}
+#alert-container:hover > #notification-container {
+    opacity: 0;
+}
+
+.del {
+    float: right;
+    background: none;
+    border: none;
+    margin-right: 1em;;
 }

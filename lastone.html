@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Компьютерные Комплектуюшие от MaxElis</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Компьютерные комплектующие. Цены, фотографии и характеристики">
+  <meta name="keywords" content="Компюьтер, комплектующие, RTX, 3080, 3060, NVIDIA, AMD, MaxElis, компьютерные, характеристики, описание, цены, 2080, TI">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/lastone.css">
+  <link rel="apple-touch-icon" sizes="57x57" href="/res/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/res/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/res/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/res/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/res/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/res/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/res/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/res/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/res/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/res/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/res/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/res/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/res/icons/favicon-16x16.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/res/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+</head>
+<main style="flex-direction: column">
+  <div id="contents">
+    <h3>Ссылки</h3>
+    <ul>
+      <li><a href="https://ya.ru">https://ya.ru</a></li>
+      <li><a href="./index.html">./index.html</a></li>
+      <li><a href="https://ru.wikipedia.org/wiki/Apex_Legends"><i>https://ru.wikipedia.org/wiki/Apex_Legends</i></a></li>
+    </ul>
+  </div>
+
+  <div id="gallery">
+    <h3>Галлерея</h3>
+    <img id="gallery-current" src="https://i.playground.ru/p/m42PWUtBU1ZIbo8l7N_Q9Q.jpeg">
+    <img id="gallery-new" src="https://i.playground.ru/p/m42PWUtBU1ZIbo8l7N_Q9Q.jpeg">
+    <div id="miniatures">
+      <img src="https://i.playground.ru/p/m42PWUtBU1ZIbo8l7N_Q9Q.jpeg" height="330px">
+      <img src="https://appleinsider.ru/wp-content/uploads/2021/10/dicaprio_main.jpg" height="330px">
+      <img src="https://krot.info/uploads/posts/2022-03/1647190530_2-krot-info-p-shalun-mem-smeshnie-foto-3.jpg" height="330px">
+      <img src="https://cs5.pikabu.ru/post_img/big/2014/12/26/12/1419624636_893823271.png" height="330px">
+      <img src="https://kartinkof.club/uploads/posts/2022-03/1648368282_17-kartinkof-club-p-podumai-ob-etom-mem-19.jpg" height="330px">
+    </div>
+  </div>
+
+  <div>
+    <h3>Файлы</h3>
+    <ul id="files">
+      <li>РКЧИР</li>
+      <li>СИАОД</li>
+      <li>АВМ</li>
+      <li>МАТАН</li>
+      <li>ЛИНАЛ</li>
+      <li>Что это?</li>
+      <li>Домашняя работа (Размер: 50ГБ)</li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>Слайдер</h3>
+    <div id="slider">
+                    <span id="line">
+                        <span id="cursor"></span>
+                    </span>
+    </div>
+  </div>
+
+  <div>
+    <h3>Корзина</h3>
+    <div>
+      <ul id="market">
+        <li>1000</li>
+        <li>1230</li>
+        <li>1111</li>
+        <li>666</li>
+        <li>13</li>
+      </ul>
+      <div id="cart">
+        <ul id="cart-list">
+
+        </ul>
+        <p id="cost">Стоимость: 0</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="animation">
+    <h3>Анимация</h3>
+    <div id="ship-container">
+      <img id="ship" src="https://pp.userapi.com/c638420/v638420291/39b8b/fxtuRA05D8I.jpg?ava=1">
+    </div>
+    <div id="random-ship-container">
+      <img id="random-ship" src="https://pp.userapi.com/c638420/v638420291/39b8b/fxtuRA05D8I.jpg?ava=1">
+    </div>
+
+  </div>
+
+
+  <script>
+    let contents = document.getElementById("contents");
+    contents.addEventListener ("click", e => {
+      if (e.target.tagName === "A" || e.target.tagName === "I") {
+        if (!confirm("Вы уверены")) {
+          e.preventDefault();
+        }
+      }
+    });
+
+    let gallery = document.getElementById("gallery");
+    let current = document.getElementById("gallery-current");
+    let newImg = document.getElementById("gallery-new");
+    let changing = false;
+    gallery.addEventListener ("click", e => {
+      if (!changing && e.target.parentNode.id === "miniatures" && current.src !== e.target.src) {
+        changing = true;
+        newImg.src = e.target.src;
+        newImg.style.opacity = 1;
+        setTimeout (() => {
+          current.src = e.target.src;
+          newImg.style.opacity = 0;
+        }, 1000);
+        setTimeout (() => {
+          changing = false;
+        }, 2000);
+      }
+    });
+
+    let files = document.getElementById("files");
+    files.addEventListener ("click", e => {
+      if (e.target.tagName == "LI") {
+        if (e.ctrlKey) {
+          e.target.classList.toggle("selected");
+        } else {
+          let selected = document.querySelectorAll(".selected");
+          for (let elem of selected) {
+            elem.classList.remove("selected");
+          }
+          e.target.classList.toggle("selected");
+        }
+      } else {
+        let selected = document.querySelectorAll(".selected");
+        for (let elem of selected) {
+          elem.classList.remove("selected");
+        }
+      }
+    })
+
+    let cursor = document.getElementById("cursor");
+    cursor.addEventListener("mousedown", e => {
+      e.preventDefault();
+      let line = document.getElementById("line");
+      let width = parseFloat(getComputedStyle(cursor).width);
+      let lineBegin = line.getBoundingClientRect().x;
+      document.onmousemove = e => {
+        if (e.pageX > lineBegin - width / 2 && e.pageX < parseFloat(getComputedStyle(line).width) + lineBegin - width / 2) {
+          cursor.style.left = e.pageX + - lineBegin + "px";
+        }
+      }
+      document.onmouseup = e => {
+        document.onmousemove = null;
+      }
+    })
+
+    let cost = 0;
+    let shop = document.getElementById("market");
+    let cartList = document.getElementById("cart-list");
+    let costElem = document.getElementById("cost");
+    shop.addEventListener("mousedown", e => {
+      e.preventDefault();
+      let item = e.target;
+      if (item.tagName == "LI") {
+        let movingItem = document.createElement("li");
+        movingItem.innerHTML = item.innerHTML;
+        movingItem.classList.toggle("moving");
+        document.body.appendChild (movingItem);
+
+        document.onmousemove = e => {
+          movingItem.style.top = e.clientY + "px";
+          movingItem.style.left = e.clientX + "px";
+        }
+
+        document.onmouseup = e => {
+          movingItem.hidden = true;
+          let elemBellow = document.elementFromPoint(e.clientX, e.clientY);
+          if (elemBellow.id == "cart" || elemBellow.id == "cart-list" || elemBellow.parentNode.id == "cart-list") {
+            cartList.appendChild (movingItem);
+            movingItem.hidden = false;
+            movingItem.classList.toggle("moving");
+            cost += +movingItem.innerText;
+            costElem.innerText = "Стоимость: " + cost;
+          } else {
+            movingItem.remove();
+          }
+          document.onmousemove = null;
+          document.onmouseup = null;
+        }
+      }
+    })
+
+    let ship = document.getElementById("ship");
+    start = performance.now();
+    function animateShip (time) {
+      let duration = 10000;
+      let timeFraction = (time - start) % duration / duration;
+      if (timeFraction < 0.5) {
+        ship.style.left = timeFraction * 180 + "%";
+        ship.style.transform = "scaleX(1)";
+      } else {
+        ship.style.left = (1 - timeFraction) * 180 + "%";
+        ship.style.transform = "scaleX(-1)";
+      }
+      if (timeFraction > 1) timeFraction = 1;
+
+      // ship.style.left = timeFraction * 90 + "%";
+      requestAnimationFrame(animateShip);
+    }
+    requestAnimationFrame(animateShip);
+
+
+    let randomStart = performance.now();
+    let rand = Math.random();
+    let randomMax = rand * 180;
+    let randomShip = document.getElementById("random-ship");
+    let randomDuration = rand * 10000;
+    let last;
+    let lastTime = performance.now();
+
+    function animateRandomShip (time) {
+      let timeFraction = (time - randomStart) % randomDuration / randomDuration;
+      if (timeFraction < 0.5) {
+        if (!last) {
+          rand = Math.random();
+          randomMax = rand * 180;
+          randomDuration = rand * 10000;
+          randomStart = performance.now();
+          console.log(rand);
+        }
+        last = true;
+        randomShip.style.left = timeFraction * randomMax + "%";
+        randomShip.style.transform = "scaleX(1)";
+      } else {
+        last = false;
+        randomShip.style.left = (1 - timeFraction) * randomMax + "%";
+        randomShip.style.transform = "scaleX(-1)";
+      }
+      if (timeFraction > 1) timeFraction = 1;
+      requestAnimationFrame(animateRandomShip);
+    }
+    requestAnimationFrame(animateRandomShip);
+  </script>
+</main>
+</html>
