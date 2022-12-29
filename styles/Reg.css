@@ -30,7 +30,7 @@ body{
     text-align: center;
     color: #ce6464;
     text-transform: uppercase;
-    margin-top: 0px;
+    margin-top: 0;
 }
 
 .form_group{
@@ -55,6 +55,7 @@ body{
     background-color: transparent;
     outline: none;
     transition: 0.3s;
+    color: #BD7C7CFF;
 
 }
 
@@ -186,3 +187,4 @@ main{
     justify-content: space-between;
     width: 100%;
 }
+
