@@ -2,7 +2,8 @@
 <html lang="ru">
 
 <head>
-    <title>Компьютерные Комплектуюшие от MaxElis</title>
+<!--    <title>Компьютерные Комплектуюшие от MaxElis</title>-->
+    <title>Registration</title>
     <meta charset="UTF-8">
     <meta name="description" content="Компьютерные комплектующие. Цены, фотографии и характеристики">
     <meta name="keywords" content="Компюьтер, комплектующие, RTX, 3080, 3060, NVIDIA, AMD, MaxElis, компьютерные, характеристики, описание, цены, 2080, TI">
@@ -30,53 +31,66 @@
 <body>
 
 <form class="form" action="form.php" method="get">
-    <h1 class = "form_title"> Регистрация</h1>
+<!--    <h1 class = "form_title">Регистрация</h1>-->
+    <h1 class = "form_title">Registration</h1>
 
     <div class="form_group">
         <input class="form_input" placeholder=" " type="text" name="name">
-        <label class="form_label">ФИО</label>
+<!--        <label class="form_label">ФИО</label>-->
+        <label class="form_label">Nickname</label>
     </div>
 
     <div class="form_group">
         <input class="form_input" placeholder=" " type="email" name="email">
-        <label class="form_label">Почта</label>
+<!--        <label class="form_label">Почта</label>-->
+        <label class="form_label">Email</label>
     </div>
 
     <div class="form_group">
         <input class="form_input" placeholder=" " type="password" name="passwd">
-        <label class="form_label">Пароль</label>
+<!--        <label class="form_label">Пароль</label>-->
+        <label class="form_label">Password</label>
     </div>
 
     <div class="form_group">
         <input class="form_input" placeholder=" " type="tel" name="phone">
-        <label class="form_label">Телефон</label>
+<!--        <label class="form_label">Телефон</label>-->
+        <label class="form_label">Telephone</label>
     </div>
 
     <div class="form_group">
         <input class="form_input" placeholder=" " type="date" name="birth">
-        <label class="form_label">Дата Рождения</label>
+<!--        <label class="form_label">Дата Рождения</label>-->
+        <label class="form_label">Birthday</label>
     </div>
 
     <div class="form_group">
         <label class="form_label">Пол</label><br><br>
         <label>
-            <input type="radio" value="male" name="sex" checked> <a style="color: #f8eeee">Мужской</a>
+<!--            <input type="radio" value="male" name="sex" checked> <a style="color: #f8eeee">Мужской</a>-->
+            <input type="radio" value="male" name="sex" checked> <a style="color: #f8eeee">Male</a>
 
         </label>
         <label>
-            <input type="radio" value="female" name="sex" > <a style="color: #F8EEEEFF">Женский</a>
-            <label class="form_label">Пол</label>
+<!--            <input type="radio" value="female" name="sex" > <a style="color: #F8EEEEFF">Женский</a>-->
+            <input type="radio" value="female" name="sex" > <a style="color: #F8EEEEFF">Female</a>
+<!--            <label class="form_label">Пол</label>-->
+            <label class="form_label">Gender</label>
         </label>
     </div>
 
     <div class="form_group">
-        <label class="form_label">Институт</label>
+<!--        <label class="form_label">Институт</label>-->
+        <label class="form_label">Institute</label>
     </div><br><br>
 
     <div class="select">
         <select name="Institute">
-            <option class="form_label" value="IIT" >ИИТ</option>
-            <option class="form_label" value="III">ИИИ</option>
+<!--            <option class="form_label" value="IIT" >ИИТ</option>-->
+<!--            <option class="form_label" value="III">ИИИ</option>-->
+
+            <option class="form_label" value="IIT" >IIT</option>
+            <option class="form_label" value="III">III</option>
         </select>
     </div>
     <div class="buttons">
@@ -86,12 +100,24 @@
 </form>
 
 </body>
+<!--<script type="text/javascript">-->
+<!--    login.onclick = function () {-->
+<!--        while (!confirm("Желаете пройти регистрацию на сайте?")) {-->
+<!--            alert("Попробуйте ещё раз");-->
+<!--        }-->
+<!--        alert("Вы успешно зарегистрированы!");-->
+<!--        window.history.go(-1);-->
+<!--        return false;-->
+<!--    }-->
+
+<!--</script>-->
+
 <script type="text/javascript">
     login.onclick = function () {
-        while (!confirm("Желаете пройти регистрацию на сайте?")) {
-            alert("Попробуйте ещё раз");
+        while (!confirm("Would you like to register on the website?")) {
+            alert("Try Again!");
         }
-        alert("Вы успешно зарегистрированы!");
+        alert("You have successfully registered!");
         window.history.go(-1);
         return false;
     }
